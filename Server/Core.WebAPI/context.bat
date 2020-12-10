@@ -1,0 +1,1 @@
+dotnet clean & dotnet build & dotnet ef migrations add initial-create & dotnet ef database update & dotnet watch run

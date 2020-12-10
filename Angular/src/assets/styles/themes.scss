@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&family=Poppins:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap");
+// ======================================= //
+// Global Font Variables:
+// ======================================= //
+$padauk : "Padauk" , sans-serif;
+$poppins: "Poppins", sans-serif;
+$roboto : "Roboto" , sans-serif;
+// ======================================= //
+// Global Color Variables:
+// ======================================= //
+$blue  : #007bff;
+$cyan  : #17a2b8;
+$danger: #dc3545;
+$dark  : #343a40;
+$gray-dark: #343a40;
+$gray: #6c757d;
+$green: #28a745;
+$indigo: #6610f2;
+$info: #17a2b8;
+$light: #f8f9fa;
+$orange: #fd7e14;
+$pink: #e83e8c;
+$primary: #007bff;
+$purple: #6f42c1;
+$red: #dc3545;
+$secondary: #6c757d;
+$success: #28a745;
+$teal: #20c997;
+$warning: #ffc107;
+$white: #fff;
+$yellow: #ffc107;
+// ======================================= //
+// Global CSS Theme Variables:
+// ======================================= //
+$navbar-bg: $info;
+$panel-bg: lightblue;

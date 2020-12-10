@@ -1,0 +1,54 @@
+@import "forms.scss";
+@import "themes.scss";
+
+.btn-submit {
+  cursor: pointer;
+  font-family: $poppins;
+  width: 250px;
+  height: 40px;
+  border-radius: 5px;
+  color: white;
+  background-color: $info;
+  border: 1px solid $info;
+  transition: ease 500ms;
+}
+.btn-submit:hover {
+  transition: ease 500ms;
+  @extend .shadow;
+  background: transparent;
+  color: $info;
+}
+.btn-submit-o {
+  cursor: pointer;
+  background: transparent;
+  color: $info;
+  font-family: $poppins;
+  width: 250px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid $info;
+  transition: ease 500ms;
+}
+.btn-submit-o:hover {
+  transition: ease 500ms;
+  color: white;
+  background-color: $info;
+  @extend .shadow;
+}
+.action-box {
+  display: flex;
+  padding: 5px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  div {
+    flex: auto;
+    margin: 5px;
+    font-size: smaller;
+  }
+  .submit {
+  }
+  .register {
+  }
+}

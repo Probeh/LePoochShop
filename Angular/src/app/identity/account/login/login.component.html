@@ -1,0 +1,31 @@
+<div class="" style="height: 80%; display: flex; align-items: center; justify-content: center;">
+  <div class="container" style="width: 450px;">
+    <div class="container-header"></div>
+    <div class="container-title" style="font-size: 30px;"><i class="fa fa-user-o" style="font-size: 30px"></i> Login
+    </div>
+    <div class="container-body" style="height: 300px;">
+      <form>
+        <div class="input-group" style="padding: 0px 5px;">
+          <label for="username">UserName:</label>
+          <input required type="text" name="username" id="username" class="input-item" placeholder="Enter your username"
+            autocomplete="off">
+        </div>
+        <div class="input-group" style="padding: 0px 5px;">
+          <label for="password">Password</label>
+          <input required type="password" name="password" id="password" class="input-item"
+            placeholder="Please enter your password" autocomplete="off">
+        </div>
+      </form>
+      <div class="action-box">
+        <div class="submit">
+          Let's Go!<br>
+          <button class="btn btn-submit" (click)="this.login()">Login!</button>
+        </div>
+        <div class="register">
+          Don't have an account?<br>
+          <button class="btn btn-submit-o">Register Now!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

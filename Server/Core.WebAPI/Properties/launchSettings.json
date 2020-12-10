@@ -1,0 +1,51 @@
+﻿{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:56880",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "IIS-Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_DBPROVIDER": "Sqlite"
+      }
+    },
+    "Project-Development": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "api",
+      "applicationUrl": "http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_DBPROVIDER": "Sqlite"
+      }
+    },
+    "Project-Staging": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "api/Staging",
+      "applicationUrl": "http://localhost:5001",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Staging",
+        "ASPNETCORE_DBPROVIDER": "SqlServer"
+      }
+    },
+    "Project-Production": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "api/Production",
+      "applicationUrl": "http://localhost:5002",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production",
+        "ASPNETCORE_DBPROVIDER": "SqlServer"
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+robocopy /mir /s /e ..\\ %onedrive%\\snapshots\\LePoochServer-Server\\snapshot-%date:~0,2%-%date:~3,2%-%date:~-4%_%random% & exit
