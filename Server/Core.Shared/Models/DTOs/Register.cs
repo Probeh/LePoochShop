@@ -8,7 +8,5 @@ namespace Core.Shared.Models.DTOs
         [Required, EmailAddress]
         public string Email { get; set; }
         // ======================================= //
-        public RegisterDTO(int? id) : base(id) { }
-        // ======================================= //
     }
 }

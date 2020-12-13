@@ -1,1 +1,0 @@
-compodoc -p tsconfig.json -d docs -n LePootch src --hideGenerator --theme readthedocs -s -r %random% -w -o

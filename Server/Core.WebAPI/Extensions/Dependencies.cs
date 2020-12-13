@@ -1,5 +1,5 @@
-using Microsoft.Extensions.DependencyInjection;
 using Core.Shared.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Core.WebAPI.Extensions
 {
@@ -9,6 +9,7 @@ namespace Core.WebAPI.Extensions
             services
             .AddScoped<ISmtpRepository, SmtpRepository>()
             .AddScoped<IActivityLogger, ActivityLogger>()
+            .AddScoped<ITokenHandler  , TokenHandler  >()
             .AddScoped(typeof(IModelRepository<>), typeof(ModelRepository<>));
     }
 }

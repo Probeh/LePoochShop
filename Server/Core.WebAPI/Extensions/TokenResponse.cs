@@ -7,12 +7,12 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace Core.WebAPI.Extensions
 {
-    public static partial class Extension
+    public static partial class Extensions
     {
-        public static void GenerateToken(this HttpResponse response, IConfiguration Configuration)
+        public static void CreateToken(this HttpResponse response, IConfiguration config)
         {
-            var security = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration.GetSection("AppSettings:Secret").Value));
-            var credential = new SigningCredentials(security, SecurityAlgorithms.HmacSha512Signature);
+            var symmetrics = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config.GetSection("AppSettings:Secret").Value));
+            var credential = new SigningCredentials(symmetrics, SecurityAlgorithms.HmacSha512Signature);
             var descriptor = new SecurityTokenDescriptor()
             {
                 Expires = DateTime.Now.AddDays(1),
@@ -21,8 +21,8 @@ namespace Core.WebAPI.Extensions
             var handler = new JwtSecurityTokenHandler();
             var token = handler.CreateToken(descriptor);
 
-            response.Headers.Add("X-Authorization", handler.WriteToken(token));
-            response.Headers.Add("Access-Control-Expose-Headers", "X-Authorization");
+            response.Headers.Add("Authorization", $"Bearer {handler.WriteToken(token)}");
+            response.Headers.Add("Access-Control-Expose-Headers", "Authorization"  );
         }
     }
 }

@@ -1,6 +1,6 @@
-using Core.Shared.Entities;
-using Core.Shared.Helpers;
 using Microsoft.AspNetCore.Http;
+using Core.Shared.Helpers;
+using Core.Shared.Models.Entities;
 
 namespace Core.WebAPI.Extensions
 {

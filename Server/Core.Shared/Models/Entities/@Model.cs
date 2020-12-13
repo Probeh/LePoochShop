@@ -1,13 +1,12 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Core.Shared.Entities
+namespace Core.Shared.Models.Entities
 {
     public abstract class BaseModel<TSource> where TSource : BaseModel<TSource>
     {
         [Key]
         public int Id { get; set; }
-        public int? CreatorId { get; set; }
         // ======================================= //
         private DateTime? _created;
         private DateTime? _activeSince;

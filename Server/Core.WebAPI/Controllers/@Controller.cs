@@ -1,12 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Security.Claims;
 using System.Threading.Tasks;
-using Core.Shared.Entities;
+using AutoMapper;
 using Core.Shared.Helpers;
-using Core.Shared.Helpers.Exceptions;
 using Core.Shared.Interfaces;
 using Core.Shared.Models.DTOs;
+using Core.Shared.Models.Entities;
 using Core.Shared.Models.Enums;
 using Core.WebAPI.Extensions;
 using Microsoft.AspNetCore.Authorization;
@@ -21,91 +20,42 @@ namespace Core.WebAPI.Controllers
     public abstract class BaseController<TSource> : ControllerBase where TSource : BaseModel<TSource>
     {
         // ======================================= //
-        private readonly Function<ClaimsPrincipal, int> claimUserId = (ClaimsPrincipal user) => int.Parse(user?.FindFirst(ClaimTypes.NameIdentifier)?.Value);
         private readonly IConfiguration _config;
+        private readonly IModelRepository<TSource> _models;
+        private readonly IMapper _mapper;
         // ======================================= //
-        private readonly IModelRepository<TSource> _repo;
-        // ======================================= //
-        protected BaseController(IConfiguration config, IModelRepository<TSource> repo)
+        protected BaseController(IConfiguration config, IModelRepository<TSource> models, IMapper mapper)
         {
+            this._mapper = mapper;
             this._config = config;
-            this._repo = repo;
+            this._models = models;
         }
         // ======================================= //
         /* Generic functional Http CRUD actions */
         // ======================================= //
+
         [HttpPut] /* CREATE a new model */
-        public virtual Task<IActionResult> CreateModel<TRequest>([FromBody] TRequest model)
-        {
-            return null;
-        }
-
-        [HttpGet("{id}")] /* GET model by id */
-        public virtual Task<IActionResult> SearchModel<TRequest>([FromRoute] int id)
-        {
-            return null;
-        }
-
-        [HttpGet] /* GET model/s via search query */
-        public virtual async Task<IActionResult> SearchModels<TRequest>()
-        {
-            ICollection<TSource> items = await _repo.SearchModels();
-            Response.SetPagination<TSource>(new Pagination<TSource>()?.Build(items));
-            Response.GenerateToken(_config);
-            return Ok(items);
-        }
-
+        protected virtual async Task<IActionResult> CreateModel<TRequest, TResponse>([FromBody] TRequest model) =>
+        Ok(_mapper.Map<TResponse>(await _models.CreateModel(_mapper.Map<TSource>(model))));
         [HttpPost] /* UPDATE existing resource */
-        public virtual async Task<IActionResult> UpdateModel<TRequest>([FromBody] TRequest model) where TRequest : BaseDTO<TRequest>
+        protected virtual async Task<IActionResult> UpdateModel<TRequest>([FromBody] TRequest model) =>
+        Ok(_mapper.Map<TRequest>(await _models.UpdateModel(_mapper.Map<TSource>(model))));
+        [HttpGet("{id}")] /* GET model by id */
+        protected virtual async Task<IActionResult> SearchModel<TResponse>([FromRoute] int id) =>
+        Ok(_mapper.Map<TResponse>(await _models.SearchModel(id)));
+        [HttpGet] /* GET model/s via search query */
+        protected virtual async Task<IActionResult> SearchModels<TResponse>()
         {
-            if (model.Id != claimUserId.Invoke(User))
-                return Unauthorized(HttpCode.MissingRoles);
-
-            return await this.Process<TSource>(async() => await _repo.UpdateModel<TRequest>(model));;
+            ICollection<TSource> items = await _models.SearchModels();
+            Response.SetPagination(new Pagination<TSource>()?.Build(items));
+            return Ok(_mapper.Map<ICollection<TResponse>>(items));
         }
 
         [HttpDelete("{id}")] /* DELETE model by id */
-        public virtual async Task<IActionResult> DeleteModel([FromRoute] int id)
+        protected virtual async Task<IActionResult> DeleteModel<TRequest>([FromRoute] int id)
         {
-            Function<TSource, IActionResult> unauthorized =
-                (source) => Unauthorized(HttpCode.MissingRoles);
-
-            return await this.Process<TSource>(callback: async() =>
-            {
-                TSource model = await _repo.SearchModel(id);
-
-                if (model.CreatorId == id)
-                    await _repo.DeleteModel(id);
-
-                else unauthorized.Invoke(model);
-                return model;
-            });
-        }
-
-        /* Encapsulated repetitive logic */
-        protected async Task<IActionResult> Process<T>(Func<Task<T>> callback)
-        {
-            try
-            {
-                T results = await callback.Invoke();
-
-                if (ModelState.IsValid)
-                    return BadRequest(ModelState);
-
-                if (results == null)
-                    return NoContent();
-
-                Response.GenerateToken(_config);
-                return Ok(results);
-            }
-            catch (ApiException failure)
-            {
-                return StatusCode((int) failure.ErrorCode, failure.Parameters);
-            }
-            catch (Exception exception)
-            {
-                return StatusCode((int) HttpCode.ServerError, exception.Message);
-            }
+            var model = await _models.SearchModel(id);
+            return Ok(_mapper.Map<TRequest>(model));
         }
     }
 }

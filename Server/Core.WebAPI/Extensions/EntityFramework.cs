@@ -9,7 +9,7 @@ namespace Core.WebAPI.Extensions
   public static partial class Extension
   {
     public static IServiceCollection SetEntityFramework(this IServiceCollection services, IConfiguration config) => Environment.GetScope() == Scopes.Development ?
-      services.AddDbContext<ApplicationData>(x => x.UseSqlite(config.GetConnectionString("Application"), c => c.MigrationsAssembly("Core.WebAPI"))) :
+      services.AddDbContext<ApplicationData>(x => x.UseSqlite   (config.GetConnectionString("Application"), c => c.MigrationsAssembly("Core.WebAPI"))) :
       services.AddDbContext<ApplicationData>(x => x.UseSqlServer(config.GetConnectionString("Application"), c => c.MigrationsAssembly("Core.WebAPI")));
   }
 }

@@ -11,8 +11,5 @@ namespace Core.Shared.Models.DTOs
         [Required, MinLength(6), DataType(DataType.Password)]
         public string Password { get; set; }
         // ======================================= //
-        public LoginDTO(int? id) : base(id) { }
-        // ======================================= //
-        public override LoginDTO FromSource<TSource>(TSource source) => this;
     }
 }

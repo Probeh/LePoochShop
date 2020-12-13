@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Core.Shared.Entities;
 
 namespace Core.Shared.Models.Entities
 {
-    public class ProfileModel<T> : BaseModel<ProfileModel<T>>
+    public class ProfileModel<TSource> : BaseModel<TSource> where TSource : BaseModel<TSource>
     {
         // ======================================= //
         public string Gender { get; set; }

@@ -1,0 +1,1 @@
+compodoc -p tsconfig.json -d docs -n LePooch src --hideGenerator --theme readthedocs & exit

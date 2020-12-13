@@ -1,0 +1,62 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "@sections/*": [
+        "src/app/@common/sections/*"
+      ],
+      "@components/*": [
+        "src/app/@common/components/*"
+      ],
+      "@identity/*": [
+        "src/app/identity/*"
+      ],
+      "@schedule/*": [
+        "src/app/schedule/*"
+      ],
+      "@appointment/*": [
+        "src/app/appointment/*"
+      ],
+      "@models/*": [
+        "src/assets/models/*"
+      ],
+      "@enums/*": [
+        "src/assets/enums/*"
+      ],
+      "@helpers/*": [
+        "src/assets/helpers/*"
+      ],
+      "@services/*": [
+        "src/assets/services/*"
+      ],
+      "@avatars/*": [
+        "src/assets/avatars/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@env/*": [
+        "src/environments/*"
+      ],
+      "@common/*": [
+        "src/app/@common/*"
+      ],
+    },
+  }
+}

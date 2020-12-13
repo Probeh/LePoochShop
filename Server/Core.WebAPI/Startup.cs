@@ -1,3 +1,5 @@
+using AutoMapper;
+using Core.Shared.Helpers;
 using Core.WebAPI.Extensions;
 using Core.WebAPI.Sockets;
 using Microsoft.AspNetCore.Builder;
@@ -10,15 +12,10 @@ namespace Core.WebAPI
 {
     public class Startup
     {
+        // ======================================= //
         public IConfiguration config { get; }
-        public IWebHostEnvironment environment { get; }
-
-        public Startup(IConfiguration config, IWebHostEnvironment env)
-        {
-            environment = env;
-            this.config = config;
-        }
-
+        // ======================================= //
+        public Startup(IConfiguration config, IWebHostEnvironment env) => this.config = config;
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -28,14 +25,15 @@ namespace Core.WebAPI
             services
                 .SetDependencies()
                 .SetEntityFramework(config)
-                .SetAuthorization()
                 .SetAuthentication(config)
                 .SetControllers();
             // ======================================= //
             // IServiceCollection default injectors
             // ======================================= //
-            services.AddCors();
-            services.AddSignalR(); /* TODO: Hopefuly implement realtime context updates for browser caching */
+            services
+                .AddCors()
+                .AddAutoMapper(typeof(MappingProfiles).Assembly)
+                .AddSignalR(); /* TODO: Hopefuly implement realtime context updates for browser caching */
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,5 +1,3 @@
-using Core.Shared.Entities;
-
 namespace Core.Shared.Models.Entities
 {
     public class ActivityModel : BaseModel<ActivityModel>

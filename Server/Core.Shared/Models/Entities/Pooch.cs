@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Core.Shared.Entities;
 
 namespace Core.Shared.Models.Entities
 {

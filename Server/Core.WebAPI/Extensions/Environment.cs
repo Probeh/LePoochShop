@@ -10,7 +10,6 @@ namespace Core.WebAPI.Extensions
             .Append("Development", Scopes.Development)
             .Append("Staging"    , Scopes.Staging    )
             .Append("Production" , Scopes.Production );
-
         public static Scopes GetScope() =>
             environments[System.Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")];
 

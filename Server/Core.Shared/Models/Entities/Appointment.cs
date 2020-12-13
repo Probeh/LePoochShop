@@ -1,6 +1,4 @@
-using Core.Shared.Models.Entities;
-
-namespace Core.Shared.Entities
+namespace Core.Shared.Models.Entities
 {
     public class AppointmentModel : BaseModel<AppointmentModel>
     {

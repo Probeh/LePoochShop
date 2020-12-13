@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
-using Core.Shared.Entities;
-using Core.Shared.Helpers;
 using Microsoft.AspNetCore.Mvc;
+using Core.Shared.Helpers;
+using Core.Shared.Models.Entities;
 
 namespace Core.Shared.Interfaces
 {

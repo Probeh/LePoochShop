@@ -1,0 +1,47 @@
+<div class="row">
+  <div
+    class="container shadow"
+    style="max-width: 750px;"
+  >
+    <div class="container-header"></div>
+    <div class="container-title"><i class="fa fa-user-circle-o"></i> Login</div>
+    <div class="container-body">
+      <form [formGroup]="this.loginForm">
+        <div class="input-group">
+          <label for="username"><i class="fa fa-user"></i> Username:</label>
+          <input
+            type="text"
+            name="username"
+            formControlName="username"
+            placeholder="Enter your username"
+            id="username"
+            class="input-item"
+          >
+        </div>
+        <div class="input-group">
+          <label for="password"><i class="fa fa-lock"></i> Password:</label>
+          <input
+            type="password"
+            name="password"
+            formControlName="password"
+            placeholder="Enter your password"
+            id="password"
+            class="input-item"
+          >
+        </div>
+        <div class="input-group">
+          <button
+            [disabled]="this.loginForm.invalid"
+            (click)="this.login()"
+          >Submit! <i class="fa fa-check"></i></button>
+        </div>
+      </form>
+      <div
+        class="input-group"
+        style="text-align: center;"
+      >
+        <a routerLink="../register">Click here to register!</a>
+      </div>
+    </div>
+  </div>
+</div>

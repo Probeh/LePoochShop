@@ -1,20 +1,17 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Core.Shared.Context;
-using Core.Shared.Entities;
-using Core.Shared.Helpers.Exceptions;
-using Core.Shared.Models.DTOs;
-using Core.Shared.Models.Enums;
 using Microsoft.EntityFrameworkCore;
+using Core.Shared.Context;
+using Core.Shared.Models.Entities;
 
 namespace Core.Shared.Interfaces
 {
     public interface IModelRepository<TSource> where TSource : BaseModel<TSource>
     {
         // ======================================= //
-        Task<TSource> UpdateModel<TRequest>(TRequest model) where TRequest : BaseDTO<TRequest>;
-        Task<TSource> CreateModel<TRequest>(TRequest model) where TRequest : BaseDTO<TRequest>;
+        Task<TSource> UpdateModel(TSource source);
+        Task<TSource> CreateModel(TSource model);
         Task<TSource> SearchModel(int id);
         Task<ICollection<TSource>> SearchModels();
         Task DeleteModel(int id);
@@ -35,15 +32,12 @@ namespace Core.Shared.Interfaces
         public virtual async Task DeleteModel(int id) =>
         await this.Process(callback: async() =>
             await _context.Set<TSource>().FindAsync(id));
-        public virtual async Task<TSource> CreateModel<TRequest>(TRequest model) where TRequest : BaseDTO<TRequest> =>
-            await this.Process(callback: async() =>
-                await _context.Set<TSource>().AddAsync(model.ToSource<TSource>()) as TSource);
-        public virtual async Task<TSource> UpdateModel<TRequest>(TRequest model) where TRequest : BaseDTO<TRequest> =>
-            await this.Process(callback: async() =>
-            {
-                _context.Update<TSource>(model.ToSource<TSource>());
-                return await _context.Set<TSource>().FindAsync(model.Id);
-            });
+        public virtual async Task<TSource> CreateModel(TSource model) =>
+        await this.Process(callback: async() =>
+            (await _context.Set<TSource>().AddAsync(model)).Entity);
+        public virtual async Task<TSource> UpdateModel(TSource source) =>
+        await this.Process(callback: async() =>
+            await _context.Set<TSource>().FindAsync(source.Id));
         // ======================================= //
         protected async Task<TSource> Process(Func<Task<TSource>> callback)
         {
@@ -53,14 +47,10 @@ namespace Core.Shared.Interfaces
                 await _context.SaveChangesAsync();
                 return result;
             }
-            catch (ApiException failure)
+            catch (Exception failure)
             {
                 /* TODO: Log the exception */
                 throw failure;
-            }
-            catch (Exception exception)
-            {
-                throw new ApiException(HttpCode.ServerError, new KeyValuePair<string, IConvertible>(typeof(TSource).GetType().Name, exception.TargetSite.Name));
             }
         }
     }

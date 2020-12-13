@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Core.Shared.Entities;
+using Core.Shared.Models.Entities;
 
 namespace Core.Shared.Helpers
 {

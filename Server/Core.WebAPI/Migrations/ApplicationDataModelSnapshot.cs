@@ -16,7 +16,46 @@ namespace Core.WebAPI.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.10");
 
-            modelBuilder.Entity("Core.Shared.Entities.AppointmentModel", b =>
+            modelBuilder.Entity("Core.Shared.Models.Entities.ActivityModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime?>("ActiveLast")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("ActiveSince")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("Created")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("MemberId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("PoochModelId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MemberId");
+
+                    b.HasIndex("PoochModelId");
+
+                    b.ToTable("ActivityLogs");
+                });
+
+            modelBuilder.Entity("Core.Shared.Models.Entities.AppointmentModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -58,45 +97,6 @@ namespace Core.WebAPI.Migrations
                     b.HasIndex("ScheduleModelId");
 
                     b.ToTable("Appointments");
-                });
-
-            modelBuilder.Entity("Core.Shared.Models.Entities.ActivityModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime?>("ActiveLast")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime?>("ActiveSince")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime?>("Created")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("MemberId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("PoochModelId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MemberId");
-
-                    b.HasIndex("PoochModelId");
-
-                    b.ToTable("ActivityLogs");
                 });
 
             modelBuilder.Entity("Core.Shared.Models.Entities.MemberModel", b =>
@@ -388,12 +388,10 @@ namespace Core.WebAPI.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(128);
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(128);
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("TEXT");
@@ -414,12 +412,10 @@ namespace Core.WebAPI.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(128);
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(128);
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Value")
                         .HasColumnType("TEXT");
@@ -429,7 +425,18 @@ namespace Core.WebAPI.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("Core.Shared.Entities.AppointmentModel", b =>
+            modelBuilder.Entity("Core.Shared.Models.Entities.ActivityModel", b =>
+                {
+                    b.HasOne("Core.Shared.Models.Entities.MemberModel", "Member")
+                        .WithMany("Connections")
+                        .HasForeignKey("MemberId");
+
+                    b.HasOne("Core.Shared.Models.Entities.PoochModel", null)
+                        .WithMany("Connections")
+                        .HasForeignKey("PoochModelId");
+                });
+
+            modelBuilder.Entity("Core.Shared.Models.Entities.AppointmentModel", b =>
                 {
                     b.HasOne("Core.Shared.Models.Entities.MemberModel", "Owner")
                         .WithMany("Appointments")
@@ -442,17 +449,6 @@ namespace Core.WebAPI.Migrations
                     b.HasOne("Core.Shared.Models.Entities.ScheduleModel", null)
                         .WithMany("Appointments")
                         .HasForeignKey("ScheduleModelId");
-                });
-
-            modelBuilder.Entity("Core.Shared.Models.Entities.ActivityModel", b =>
-                {
-                    b.HasOne("Core.Shared.Models.Entities.MemberModel", "Member")
-                        .WithMany("Connections")
-                        .HasForeignKey("MemberId");
-
-                    b.HasOne("Core.Shared.Models.Entities.PoochModel", null)
-                        .WithMany("Connections")
-                        .HasForeignKey("PoochModelId");
                 });
 
             modelBuilder.Entity("Core.Shared.Models.Entities.MemberModel", b =>
