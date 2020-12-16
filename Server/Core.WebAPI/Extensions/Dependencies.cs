@@ -12,8 +12,6 @@ namespace Core.WebAPI.Extensions
             .AddScoped<IAppointmentRepository, AppointmentRepository>()
             .AddScoped<IMemberRepository, MemberRepository>()
             .AddScoped<IPoochRepository, PoochRepository>()
-            .AddScoped<IScheduleRepository, ScheduleRepository>()
-            .AddScoped(typeof(IModelRepository<>), typeof(ModelRepository<>))
             .AddSingleton<IActivityLogger, ActivityLogger>();
     }
 }

@@ -14,7 +14,18 @@ namespace Core.WebAPI.Extensions
         public static IServiceCollection SetAuthentication(this IServiceCollection services, IConfiguration config)
         {
             return services
-                .AddIdentityCore<Shared.Models.Identity.User>(options =>
+                .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        IssuerSigningKey         = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(config.GetSection("AppSettings:Secret").Value)),
+                        ValidateAudience         = false,
+                        ValidateIssuer           = false,
+                        ValidateIssuerSigningKey = true
+                    };
+                }).Services
+                .AddIdentityCore<User>(options =>
                 {
                     options.Password.RequireDigit            = false;
                     options.Password.RequiredLength          = 6    ;
@@ -27,18 +38,7 @@ namespace Core.WebAPI.Extensions
                 .AddRoleManager<RoleManager<Role>>()
                 .AddSignInManager<SignInManager<User>>()
                 .AddRoleValidator<RoleValidator<Role>>()
-                .AddEntityFrameworkStores<ApplicationData>().Services
-                .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(options =>
-                {
-                    options.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        IssuerSigningKey         = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(config.GetSection("AppSettings:Secret").Value)),
-                        ValidateAudience         = false,
-                        ValidateIssuer           = false,
-                        ValidateIssuerSigningKey = true
-                    };
-                }).Services;
+                .AddEntityFrameworkStores<ApplicationData>().Services;
         }
     }
 }

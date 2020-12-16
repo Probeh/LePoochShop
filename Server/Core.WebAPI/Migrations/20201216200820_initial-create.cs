@@ -64,30 +64,11 @@ namespace Core.WebAPI.Migrations
                     Photo = table.Column<string>(nullable: true),
                     DateOfBirth = table.Column<DateTime>(nullable: true),
                     Breed = table.Column<string>(nullable: true),
-                    OwnerId = table.Column<int>(nullable: true)
+                    MemberId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Pooches", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Schedules",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Title = table.Column<string>(nullable: true),
-                    Description = table.Column<string>(nullable: true),
-                    IsActive = table.Column<bool>(nullable: false),
-                    Created = table.Column<DateTime>(nullable: true),
-                    ActiveSince = table.Column<DateTime>(nullable: true),
-                    ActiveLast = table.Column<DateTime>(nullable: true),
-                    Date = table.Column<DateTime>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Schedules", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -284,16 +265,16 @@ namespace Core.WebAPI.Migrations
                     Created = table.Column<DateTime>(nullable: true),
                     ActiveSince = table.Column<DateTime>(nullable: true),
                     ActiveLast = table.Column<DateTime>(nullable: true),
-                    OwnerId = table.Column<int>(nullable: true),
-                    PoochId = table.Column<int>(nullable: true),
-                    ScheduleModelId = table.Column<int>(nullable: true)
+                    Date = table.Column<DateTime>(nullable: true),
+                    MemberId = table.Column<int>(nullable: true),
+                    PoochId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Appointments", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Appointments_Members_OwnerId",
-                        column: x => x.OwnerId,
+                        name: "FK_Appointments_Members_MemberId",
+                        column: x => x.MemberId,
                         principalTable: "Members",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -301,12 +282,6 @@ namespace Core.WebAPI.Migrations
                         name: "FK_Appointments_Pooches_PoochId",
                         column: x => x.PoochId,
                         principalTable: "Pooches",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Appointments_Schedules_ScheduleModelId",
-                        column: x => x.ScheduleModelId,
-                        principalTable: "Schedules",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -322,19 +297,14 @@ namespace Core.WebAPI.Migrations
                 column: "PoochModelId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Appointments_OwnerId",
+                name: "IX_Appointments_MemberId",
                 table: "Appointments",
-                column: "OwnerId");
+                column: "MemberId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Appointments_PoochId",
                 table: "Appointments",
                 column: "PoochId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Appointments_ScheduleModelId",
-                table: "Appointments",
-                column: "ScheduleModelId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -414,9 +384,6 @@ namespace Core.WebAPI.Migrations
 
             migrationBuilder.DropTable(
                 name: "Members");
-
-            migrationBuilder.DropTable(
-                name: "Schedules");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

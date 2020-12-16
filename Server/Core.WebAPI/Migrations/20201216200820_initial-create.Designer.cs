@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Core.WebAPI.Migrations
 {
     [DbContext(typeof(ApplicationData))]
-    [Migration("20201216142826_initial-create")]
+    [Migration("20201216200820_initial-create")]
     partial class initialcreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -72,19 +72,19 @@ namespace Core.WebAPI.Migrations
                     b.Property<DateTime?>("Created")
                         .HasColumnType("TEXT");
 
+                    b.Property<DateTime?>("Date")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("OwnerId")
+                    b.Property<int?>("MemberId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int?>("PoochId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("ScheduleModelId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Title")
@@ -92,11 +92,9 @@ namespace Core.WebAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("OwnerId");
+                    b.HasIndex("MemberId");
 
                     b.HasIndex("PoochId");
-
-                    b.HasIndex("ScheduleModelId");
 
                     b.ToTable("Appointments");
                 });
@@ -180,7 +178,7 @@ namespace Core.WebAPI.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("OwnerId")
+                    b.Property<int?>("MemberId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Photo")
@@ -192,38 +190,6 @@ namespace Core.WebAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Pooches");
-                });
-
-            modelBuilder.Entity("Core.Shared.Models.Entities.ScheduleModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime?>("ActiveLast")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime?>("ActiveSince")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime?>("Created")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime?>("Date")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Schedules");
                 });
 
             modelBuilder.Entity("Core.Shared.Models.Identity.Role", b =>
@@ -440,17 +406,13 @@ namespace Core.WebAPI.Migrations
 
             modelBuilder.Entity("Core.Shared.Models.Entities.AppointmentModel", b =>
                 {
-                    b.HasOne("Core.Shared.Models.Entities.MemberModel", "Owner")
+                    b.HasOne("Core.Shared.Models.Entities.MemberModel", "Member")
                         .WithMany("Appointments")
-                        .HasForeignKey("OwnerId");
+                        .HasForeignKey("MemberId");
 
                     b.HasOne("Core.Shared.Models.Entities.PoochModel", "Pooch")
                         .WithMany("Appointments")
                         .HasForeignKey("PoochId");
-
-                    b.HasOne("Core.Shared.Models.Entities.ScheduleModel", null)
-                        .WithMany("Appointments")
-                        .HasForeignKey("ScheduleModelId");
                 });
 
             modelBuilder.Entity("Core.Shared.Models.Entities.MemberModel", b =>
