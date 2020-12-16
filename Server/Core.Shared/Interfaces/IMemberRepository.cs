@@ -5,13 +5,14 @@ using System.Threading.Tasks;
 using Core.Shared.Context;
 using Core.Shared.Helpers;
 using Core.Shared.Models.Entities;
+using Core.Shared.Models.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Core.Shared.Interfaces
 {
     public interface IMemberRepository : IModelRepository<MemberModel>
     {
-        Task<ICollection<MemberModel>> SearchModels(SearchParams search);
+        Task<Pagination<MemberModel>> SearchModels(SearchParams search);
     }
     public class MemberRepository : IMemberRepository
     {
@@ -23,53 +24,71 @@ namespace Core.Shared.Interfaces
             this._context = context;
         }
         // ======================================= //
-
-        public async Task<MemberModel> CreateModel(MemberModel model)
+        public async Task<ICollection<MemberModel>> SearchModels()
         {
-            var result = (await _context.Set<MemberModel>().AddAsync(model)).Entity;
-            await _context.SaveChangesAsync();
-            return result;
+            return await _context.Set<MemberModel>()
+                .Include(x => x.Pooch)
+                .Include(x => x.Appointments)
+                .ToListAsync();
         }
-        public async Task DeleteModel(int id)
-        {
-            _context.Set<MemberModel>()
-                .Remove((await _context.Set<MemberModel>()
-                    .FindAsync(id)));
-            await _context.SaveChangesAsync();
-        }
-        public async Task<ICollection<MemberModel>> SearchModels(SearchParams search)
+        public async Task<Pagination<MemberModel>> SearchModels(SearchParams search)
         {
             Func<MemberModel, bool> filter = (model) =>
             {
-                if (search.Date != null && (DateTime) search.Date == model.Created)
-                    return true;
-                if (search.Id > 0 && search.Id == model.Id)
-                    return true;
-                if (search.IsActive != -1)
-                    return search.IsActive == 1;
-                if (search.MinDate == null && search.MaxDate != null && (DateTime) search.MaxDate >= model.Created)
-                    return true;
-                if (search.MinDate != null && (DateTime) search.MinDate <= model.Created)
-                    if (search.MaxDate == null || search.MaxDate != null && (DateTime) search.MaxDate >= model.Created)
-                        return true;
+                if (search.Date != null)
+                    return (DateTime) search.Date == model.Created;
+                else if (search.MinDate != null && search.MaxDate != null)
+                    return (DateTime) search.MinDate <= model.Created && (DateTime) search.MaxDate >= model.Created;
+                else if (search.MinDate != null)
+                    return (DateTime) search.MinDate <= model.Created;
+                else if (search.MaxDate != null)
+                    return (DateTime) search.MaxDate >= model.Created;
+                else if (search.Id != -1)
+                    return search.Id == model.Id;
+                else if (search.IsActive != -1)
+                    return model.IsActive = search.IsActive == 1;
+
                 return false;
             };
 
-            return await _context.Set<MemberModel>()
-                .Where(x => filter(x))
-                .Include(x => x.Appointments)
+            IQueryable<MemberModel> models = _context
+                .Set<MemberModel>()
+                .Where(x => filter(x));
+
+            switch ((OrderLevel) search.OrderBy)
+            {
+                case OrderLevel.Ascending:
+                    models.OrderBy(x => x.Created);
+                    break;
+                case OrderLevel.Descending:
+                    models.OrderByDescending(x => x.Created);
+                    break;
+            }
+
+            Pagination<MemberModel> pagination =
+                new Pagination<MemberModel>(totalItems: models.Count(), currentPage: search.CurrentPage);
+
+            models
+                .Skip((search.CurrentPage - 1) * search.Results)
+                .Take(search.Results)
                 .Include(x => x.Pooch)
-                .ToListAsync();
+                .Include(x => x.Appointments);
+
+            return pagination.Build(await models.ToListAsync());
         }
         public async Task<MemberModel> SearchModel(int id)
         {
             return await _context.Set<MemberModel>()
-                .FindAsync(id);
+                .Include(x => x.Pooch)
+                .Include(x => x.Appointments)
+                .SingleOrDefaultAsync(x => x.Id == id);
         }
-        public async Task<ICollection<MemberModel>> SearchModels()
+        public async Task<MemberModel> CreateModel(MemberModel model)
         {
-            return await _context.Set<MemberModel>()
-                .ToListAsync();
+            var result = (await _context.Set<MemberModel>()
+                .AddAsync(model)).Entity;
+            await _context.SaveChangesAsync();
+            return result;
         }
         public async Task<MemberModel> UpdateModel(MemberModel source)
         {
@@ -78,5 +97,13 @@ namespace Core.Shared.Interfaces
             await _context.SaveChangesAsync();
             return result;
         }
+        public async Task DeleteModel(int id)
+        {
+            _context.Set<MemberModel>()
+                .Remove(await _context.Set<MemberModel>()
+                    .FindAsync(id));
+            await _context.SaveChangesAsync();
+        }
+
     }
 }

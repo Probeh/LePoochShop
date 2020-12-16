@@ -2,6 +2,7 @@ namespace Core.Shared.Models.Enums
 {
     public enum OrderLevel
     {
-         Ascending, Descending
+        Descending = 1,
+        Ascending  = 2
     }
 }

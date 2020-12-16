@@ -1,5 +1,5 @@
 namespace Core.Shared.Models.DTOs
 {
-    public abstract class BaseDTO<TModel> where TModel : BaseDTO<TModel>
-    { }
+    public abstract class BaseDTO {}
+    public abstract class BaseDTO<TModel> : BaseDTO where TModel : BaseDTO<TModel> { }
 }

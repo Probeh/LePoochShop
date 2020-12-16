@@ -6,7 +6,8 @@ namespace Core.Shared.Models.Entities
     {
         // ======================================= //
         public string Breed { get; set; }
-        public int? OwnerId { get; set; }
+        // ======================================= //
+        public int? MemberId { get; set; }
         public virtual ICollection<AppointmentModel> Appointments { get; set; }
         // ======================================= //
     }

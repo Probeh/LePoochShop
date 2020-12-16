@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Core.Shared.Models.Entities
 {
-    public abstract class BaseModel<TSource> where TSource : BaseModel<TSource>
+    public abstract class BaseModel
     {
         [Key]
         public int Id { get; set; }
@@ -64,4 +64,5 @@ namespace Core.Shared.Models.Entities
         }
         // ======================================= //
     }
+    public abstract class BaseModel<TSource> : BaseModel where TSource : BaseModel<TSource> { }
 }

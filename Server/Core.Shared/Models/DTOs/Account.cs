@@ -1,7 +1,4 @@
 namespace Core.Shared.Models.DTOs
 {
-    public class AccountDTO : BaseDTO<AccountDTO>
-    {
-
-    }
+    public class AccountDTO : BaseDTO { }
 }

@@ -15,7 +15,6 @@ namespace Core.Shared.Context
         public DbSet<ActivityModel> ActivityLogs { get; set; }
         public DbSet<PoochModel> Pooches { get; set; }
         public DbSet<MemberModel> Members { get; set; }
-        public DbSet<ScheduleModel> Schedules { get; set; }
         public DbSet<AppointmentModel> Appointments { get; set; }
         // ======================================= //
         public ApplicationData(DbContextOptions options) : base(options) { }

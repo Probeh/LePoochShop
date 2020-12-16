@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Probe\\Documents\\Development\\.Net\\LePooch\\Server\\Core.Shared\\Core.Shared.csproj": {}
+    "C:\\Users\\Probe\\Documents\\Development\\.Net\\LePooch\\server\\Core.Shared\\Core.Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Probe\\Documents\\Development\\.Net\\LePooch\\Server\\Core.Shared\\Core.Shared.csproj": {
+    "C:\\Users\\Probe\\Documents\\Development\\.Net\\LePooch\\server\\Core.Shared\\Core.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Probe\\Documents\\Development\\.Net\\LePooch\\Server\\Core.Shared\\Core.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Probe\\Documents\\Development\\.Net\\LePooch\\server\\Core.Shared\\Core.Shared.csproj",
         "projectName": "Core.Shared",
-        "projectPath": "C:\\Users\\Probe\\Documents\\Development\\.Net\\LePooch\\Server\\Core.Shared\\Core.Shared.csproj",
+        "projectPath": "C:\\Users\\Probe\\Documents\\Development\\.Net\\LePooch\\server\\Core.Shared\\Core.Shared.csproj",
         "packagesPath": "C:\\Users\\Probe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Probe\\Documents\\Development\\.Net\\LePooch\\Server\\Core.Shared\\obj\\",
+        "outputPath": "C:\\Users\\Probe\\Documents\\Development\\.Net\\LePooch\\server\\Core.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Probe\\AppData\\Roaming\\NuGet\\NuGet.Config",

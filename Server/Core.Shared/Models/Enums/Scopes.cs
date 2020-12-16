@@ -2,6 +2,9 @@ namespace Core.Shared.Models.Enums
 {
     public enum Scopes
     {
-        Staging, Production, Development
+
+        Development = 1,
+        Staging     = 2,
+        Production  = 3
     }
 }

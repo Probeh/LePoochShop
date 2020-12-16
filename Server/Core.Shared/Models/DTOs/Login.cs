@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Core.Shared.Models.DTOs
 {
-    public class LoginDTO : BaseDTO<LoginDTO>
+    public class LoginDTO : BaseDTO
     {
         // ======================================= //
         [Required, MinLength(4)]

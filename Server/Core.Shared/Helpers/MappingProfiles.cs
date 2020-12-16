@@ -22,8 +22,6 @@ namespace Core.Shared.Helpers
                 .ReverseMap();
             CreateMap<AppointmentModel, AppointmentDTO>()
                 .ReverseMap();
-            CreateMap<ScheduleModel, ScheduleDTO>()
-                .ReverseMap();
         }
         public MappingProfiles(string profileName) : base(profileName) { }
         public MappingProfiles(string profileName, Action<IProfileExpression> configurationAction) : base(profileName, configurationAction) { }
