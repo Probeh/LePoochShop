@@ -25,7 +25,8 @@ namespace Core.Shared.Interfaces
         // ======================================= //
         /* Complete generic context operations */
         // ======================================= //
-        public virtual async Task<ICollection<TSource>> SearchModels() => await _context.Set<TSource>().ToListAsync();
+        public virtual async Task<ICollection<TSource>> SearchModels() =>
+        await _context.Set<TSource>().ToListAsync();
         public virtual async Task<TSource> SearchModel(int id) =>
         await this.Process(callback: async() =>
             await _context.Set<TSource>().FindAsync(id));

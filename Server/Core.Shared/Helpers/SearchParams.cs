@@ -8,11 +8,11 @@ namespace Core.Shared.Helpers
     {
         public string Name { get; set; }
 
-        [Range(0, Int32.MaxValue)]
+        [Range(1, Int32.MaxValue)]
         public int Id { get; set; }
 
         [Range(0, 1)]
-        public int IsActive { get; set; }
+        public int IsActive { get; set; } = -1;
 
         [Range(1, Int32.MaxValue)]
         public int Results { get; set; }

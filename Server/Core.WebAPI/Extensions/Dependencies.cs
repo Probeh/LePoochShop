@@ -8,8 +8,12 @@ namespace Core.WebAPI.Extensions
         public static IServiceCollection SetDependencies(this IServiceCollection services) =>
             services
             .AddScoped<ISmtpRepository, SmtpRepository>()
-            .AddScoped<IActivityLogger, ActivityLogger>()
-            .AddScoped<ITokenHandler  , TokenHandler  >()
-            .AddScoped(typeof(IModelRepository<>), typeof(ModelRepository<>));
+            .AddScoped<ITokenHandler, TokenHandler>()
+            .AddScoped<IAppointmentRepository, AppointmentRepository>()
+            .AddScoped<IMemberRepository, MemberRepository>()
+            .AddScoped<IPoochRepository, PoochRepository>()
+            .AddScoped<IScheduleRepository, ScheduleRepository>()
+            .AddScoped(typeof(IModelRepository<>), typeof(ModelRepository<>))
+            .AddSingleton<IActivityLogger, ActivityLogger>();
     }
 }

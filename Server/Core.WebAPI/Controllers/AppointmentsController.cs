@@ -1,22 +1,26 @@
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using AutoMapper;
 using Core.Shared.Interfaces;
-using Core.Shared.Models.Entities;
-using Microsoft.Extensions.Configuration;
 
 namespace Core.WebAPI.Controllers
 {
-    public class AppointmentsController : BaseController<MemberModel>
+    [Authorize]
+    [ApiController]
+    [Route("api/[controller]")]
+    public class AppointmentsController : ControllerBase
     {
         // ======================================= //
-        private readonly IConfiguration config;
-        private readonly IModelRepository<MemberModel> models;
-        private readonly IMapper mapper;
+        private readonly IConfiguration _config;
+        private readonly IAppointmentRepository _repo;
+        private readonly IMapper _mapper;
         // ======================================= //
-        public AppointmentsController(IConfiguration config, IModelRepository<MemberModel> models, IMapper mapper) : base(config, models, mapper)
+        public AppointmentsController(IConfiguration config, IAppointmentRepository repo, IMapper mapper)
         {
-            this.config = config;
-            this.models = models;
-            this.mapper = mapper;
+            this._config = config;
+            this._repo = repo;
+            this._mapper = mapper;
         }
         // ======================================= //
     }
