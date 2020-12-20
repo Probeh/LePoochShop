@@ -1,6 +1,20 @@
 @import "themes";
 @import "styles";
 
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  .content-header {
+    height: 50px;
+  }
+  .content-main {
+    flex: auto;
+    overflow-y: auto;
+  }
+}
+
 .view-port {
   height: 100vh;
   max-height: 100vh;

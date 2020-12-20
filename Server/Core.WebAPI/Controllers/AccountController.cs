@@ -72,13 +72,5 @@ namespace Core.WebAPI.Controllers
             }
             catch (Exception) { return Unauthorized("Invalid username or password"); }
         }
-
-        [Authorize]
-        [HttpPost("logout")]
-        public async Task<IActionResult> UserLogout()
-        {
-            await _signIn.SignOutAsync();
-            return Ok();
-        }
     }
 }

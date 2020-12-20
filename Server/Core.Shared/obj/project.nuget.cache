@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DXvqwH1kz6ItPDz76TXJJj4odHJ8MeZ02qf6jJ1w979DWlO+pa46ixiGve8aql3Z9aFnwSeLcG3mZXzPr/H92Q==",
+  "dgSpecHash": "Y+TQ0OCub6d3umoiC25vMUwjG+pABLG1lfAnP9YtiODHWIrepByYpDe90Zbchd13EbaxkxxDgcgw/KmQ1FpFXA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Probe\\Documents\\Development\\.Net\\LePooch\\server\\Core.Shared\\Core.Shared.csproj",
+  "projectFilePath": "C:\\Users\\Probe\\Documents\\Development\\.Net\\LePooch\\Server\\Core.Shared\\Core.Shared.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Probe\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\Probe\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",

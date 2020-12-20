@@ -1,47 +1,102 @@
-<div class="row">
-  <div
-    class="container shadow"
-    style="max-width: 750px;"
-  >
-    <div class="container-header"></div>
-    <div class="container-title"><i class="fa fa-user-circle-o"></i> Login</div>
-    <div class="container-body">
-      <form [formGroup]="this.loginForm">
-        <div class="input-group">
-          <label for="username"><i class="fa fa-user"></i> Username:</label>
-          <input
-            type="text"
-            name="username"
-            formControlName="username"
-            placeholder="Enter your username"
-            id="username"
-            class="input-item"
-          >
-        </div>
-        <div class="input-group">
-          <label for="password"><i class="fa fa-lock"></i> Password:</label>
-          <input
-            type="password"
-            name="password"
-            formControlName="password"
-            placeholder="Enter your password"
-            id="password"
-            class="input-item"
-          >
-        </div>
-        <div class="input-group">
-          <button
-            [disabled]="this.loginForm.invalid"
-            (click)="this.login()"
-          >Submit! <i class="fa fa-check"></i></button>
-        </div>
-      </form>
-      <div
-        class="input-group"
-        style="text-align: center;"
-      >
-        <a routerLink="../register">Click here to register!</a>
+<form
+  (ngSubmit)="this.login()"
+  [formGroup]="this.formGroup"
+  class="card shadow"
+>
+  <div class="card-header p-1 bg-success"></div>
+  <div class="card-title">
+    <i class="fa fa-user-circle-o mr-2"></i>
+    Existing User Login
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <ng-container
+          [ngTemplateOutlet]="loginErrors"
+          [ngTemplateOutletContext]="{ field: 'credentials' }"
+        ></ng-container>
+
       </div>
     </div>
+    <div class="row">
+      <div class="col form-group">
+        <label for="username">Username:</label>
+        <div style="display: flex; align-items: center; justify-content: center;">
+          <i
+            class="fa fa-user text-info"
+            style="font-size: 16px; padding: 0px 5px 0px 0px;"
+          ></i>
+          <input
+            class="form-control form-control-sm"
+            formControlName="username"
+            id="login-username"
+            name="username"
+            placeholder="Username:"
+            type="text"
+          >
+        </div>
+        <ng-container
+          [ngTemplateOutlet]="loginErrors"
+          [ngTemplateOutletContext]="{ field: 'username' }"
+        ></ng-container>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col form-group">
+        <label for="password">Password:</label>
+        <div style="display: flex; align-items: center; justify-content: center;">
+          <i
+            class="fa fa-lock text-info"
+            style="font-size: 16px; padding: 0px 5px 0px 0px;"
+          ></i>
+          <input
+            class="form-control form-control-sm"
+            formControlName="password"
+            id="login-password"
+            name="password"
+            placeholder="Password:"
+            type="password"
+          >
+        </div>
+      </div>
+    </div>
+    <ng-container
+      [ngTemplateOutlet]="loginErrors"
+      [ngTemplateOutletContext]="{ field: 'password' }"
+    ></ng-container>
   </div>
-</div>
+
+  <div class="card-footer">
+    <button
+      [disabled]="this.formGroup.invalid"
+      class="btn btn-sm btn-block btn-outline-info"
+      type="submit"
+    >
+      <i class="fa fa-check-circle mr-1"></i> Login</button>
+  </div>
+</form>
+
+<ng-template
+  #loginErrors
+  let-field="field"
+>
+  <!-- Control Error -->
+  <div
+    *ngIf="this.formGroup.controls[field] && this.formGroup.get(field).touched && this.formGroup.get(field).invalid"
+    class="alert alert-danger mt-2"
+    role="alert"
+  >
+    <strong><i class="fa fa-exclamation-triangle mr-2"></i> Invalid {{field | titlecase}}</strong>
+    <div *ngFor="let message of this.getErrors(field); let index = index">{{index + 1}}.
+      {{this.formGroup.get(field).errors[message]}}</div>
+  </div>
+  <!-- Form Error -->
+  <div
+    *ngIf="field == 'credentials' && this.formGroup.hasError(field)"
+    class="alert alert-danger mt-2"
+    role="alert"
+  >
+    <strong><i class="fa fa-exclamation-triangle mr-2"></i> Login Failed!</strong>
+    <div>{{this.formGroup.errors[field]}}</div>
+  </div>
+</ng-template>

@@ -18,11 +18,23 @@
       "dom"
     ],
     "paths": {
-      "@sections/*": [
-        "src/app/@common/sections/*"
+      "@models/*": [
+        "src/app/@common/models/*"
+      ],
+      "@enums/*": [
+        "src/app/@common/enums/*"
+      ],
+      "@helpers/*": [
+        "src/app/@common/helpers/*"
+      ],
+      "@services/*": [
+        "src/app/@common/services/*"
       ],
       "@components/*": [
         "src/app/@common/components/*"
+      ],
+      "@sections/*": [
+        "src/app/@common/sections/*"
       ],
       "@identity/*": [
         "src/app/identity/*"
@@ -32,18 +44,6 @@
       ],
       "@appointment/*": [
         "src/app/appointment/*"
-      ],
-      "@models/*": [
-        "src/assets/models/*"
-      ],
-      "@enums/*": [
-        "src/assets/enums/*"
-      ],
-      "@helpers/*": [
-        "src/assets/helpers/*"
-      ],
-      "@services/*": [
-        "src/assets/services/*"
       ],
       "@avatars/*": [
         "src/assets/avatars/*"

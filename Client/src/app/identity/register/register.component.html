@@ -1,58 +1,120 @@
-<div class="row">
-  <div
-    class="container shadow"
-    style="max-width: 750px;"
-  >
-    <div class="container-header"></div>
-    <div class="container-title"><i class="fa fa-user-plus"></i> Register</div>
-    <div class="container-body">
-      <form [formGroup]="this.registerForm">
-        <div class="input-group">
-          <label for="username"><i class="fa fa-user"></i> Username:</label>
+<form
+  (ngSubmit)="this.register()"
+  [formGroup]="this.formGroup"
+  class="card shadow"
+>
+  <div class="card-header p-1 bg-info"></div>
+  <div class="card-title">
+    <i class="fa fa-user-plus mr-2"></i>
+    Register a New Account
+  </div>
+  <div class="card-body">
+
+    <div class="row">
+      <div class="col form-group">
+        <label for="username">Username:</label>
+        <div style="display: flex; align-items: center; justify-content: center;">
+          <i
+            class="fa fa-user text-info"
+            style="font-size: 16px; padding: 0px 5px 0px 0px;"
+          ></i>
           <input
-            type="text"
-            name="username"
+            class="form-control form-control-sm"
             formControlName="username"
-            placeholder="Enter your username"
-            id="username"
-            class="input-item"
-          >
-        </div>
-        <div class="input-group">
-          <label for="password"><i class="fa fa-lock"></i> Password:</label>
-          <input
-            type="password"
-            name="password"
-            formControlName="password"
-            placeholder="Enter your password"
-            id="password"
-            class="input-item"
-          >
-        </div>
-        <div class="input-group">
-          <label for="email"><i class="fa fa-envelope"></i> Email:</label>
-          <input
+            id="register-username"
+            name="username"
+            placeholder="Username:"
             type="text"
-            name="email"
-            formControlName="email"
-            placeholder="Enter your email"
-            id="email"
-            class="input-item"
           >
         </div>
-        <div class="input-group">
-          <button
-            [disabled]="this.registerForm.invalid"
-            (click)="this.register()"
-          >Submit! <i class="fa fa-check"></i></button>
+      </div>
+      <div class="col form-group">
+        <label for="password">Password:</label>
+        <div style="display: flex; align-items: center; justify-content: center;">
+          <i
+            class="fa fa-lock text-info"
+            style="font-size: 16px; padding: 0px 5px 0px 0px;"
+          ></i>
+          <input
+            class="form-control form-control-sm"
+            formControlName="password"
+            id="register-password"
+            name="password"
+            placeholder="Password:"
+            type="password"
+          >
         </div>
-      </form>
-      <div
-        class="input-group"
-        style="text-align: center;"
-      >
-        <a routerLink="../login">Click here to login!</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <ng-container
+          [ngTemplateOutlet]="registerErrors"
+          [ngTemplateOutletContext]="{ field: 'username' }"
+        ></ng-container>
+        <ng-container
+          [ngTemplateOutlet]="registerErrors"
+          [ngTemplateOutletContext]="{ field: 'password' }"
+        ></ng-container>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col form-group">
+        <label for="email">Email:</label>
+        <div style="display: flex; align-items: center; justify-content: center;">
+          <i
+            class="fa fa-envelope-open-o text-info"
+            style="font-size: 16px; padding: 0px 5px 0px 0px;"
+          ></i>
+          <input
+            class="form-control form-control-sm"
+            formControlName="email"
+            id="register-email"
+            name="email"
+            placeholder="Email address:"
+            type="email"
+          >
+        </div>
+        <ng-container
+          [ngTemplateOutlet]="registerErrors"
+          [ngTemplateOutletContext]="{ field: 'email' }"
+        ></ng-container>
       </div>
     </div>
   </div>
-</div>
+  <div
+    class="card-footer"
+    style="display: flex; justify-content: space-between; align-items: center;"
+  >
+    <button
+      [disabled]="this.formGroup.invalid"
+      class="btn btn-sm btn-outline-info"
+      style="flex: auto; margin: 0px 5px;"
+      type="submit"
+    >
+      <i class="fa fa-user-plus mr-1"></i> Register</button>
+    <button
+      (click)="this.formGroup.reset()"
+      [disabled]="this.formGroup.pristine"
+      class="btn btn-sm btn-outline-danger"
+      style="flex: auto; margin: 0px 5px;"
+    >
+      <i class="fa fa-refresh mr-1"></i> Clear</button>
+  </div>
+</form>
+
+<ng-template
+  #registerErrors
+  let-field="field"
+>
+  <div
+    *ngIf="this.formGroup.controls[field] && this.formGroup.get(field).touched && this.formGroup.get(field).invalid"
+    class="alert alert-danger mt-2"
+    role="alert"
+  >
+    <strong><i class="fa fa-exclamation-triangle mr-2"></i> Invalid {{field | titlecase}}</strong>
+    <div *ngFor="let message of this.getErrors(field); let index = index">{{index + 1}}.
+      {{this.formGroup.get(field).errors[message]}}</div>
+  </div>
+</ng-template>

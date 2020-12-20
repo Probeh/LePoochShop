@@ -7,11 +7,6 @@
   flex-wrap: wrap;
   font-size: 14px;
 
-  label {
-    padding: 0 0 5px 5px;
-    text-align: left;
-    color: $secondary;
-  }
   button {
     font-size: 14px;
     padding: 5px;
@@ -20,21 +15,4 @@
     text-decoration: none;
     color: $primary;
   }
-}
-input[type="text"],
-input[type="password"] {
-  border-radius: 5px;
-  border: 1px solid $info !important;
-}
-.input-item {
-  flex: auto;
-  border: 1px solid $info;
-  padding: 5px 7.5px;
-  opacity: 50%;
-  color: $info;
-  transition: 500ms ease-in-out;
-}
-.input-item:focus {
-  transition: 500ms ease-in-out;
-  opacity: 100%;
 }
