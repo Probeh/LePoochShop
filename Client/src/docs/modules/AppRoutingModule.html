@@ -71,16 +71,15 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;
-import { RouterModule, Routes } from &#x27;@angular/router&#x27;
-import { HomeComponent } from &#x27;@sections/home/home.component&#x27;;
-import { IdentityGuard } from &#x27;@services/identity.guard&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule              } from &#x27;@angular/core&#x27;
+import { RouterModule , Routes } from &#x27;@angular/router&#x27;
+import { IdentityGuard         } from &#x27;@services/identity.guard&#x27;
 
 const routes: Routes &#x3D; [
   // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
-  { path: &#x27;home&#x27;, component:HomeComponent },
-  { path: &#x27;schedule&#x27;, canActivate: [IdentityGuard], loadChildren: () &#x3D;&gt; &quot;import(&#x27;./schedule/schedule.module&#x27;).then(m &#x3D;&gt; m.ScheduleModule)&quot; },
-  { path: &#x27;account&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./identity/identity.module&#x27;).then(m &#x3D;&gt; m.IdentityModule)&quot; },
+  { path: &#x27;account&#x27;  ,                               loadChildren: () &#x3D;&gt; &quot;import(&#x27;./identity/identity.module&#x27;).then(m &#x3D;&gt; m.IdentityModule)&quot; },
+  { path: &#x27;schedule&#x27; , canActivate: [IdentityGuard], loadChildren: () &#x3D;&gt; &quot;import(&#x27;./schedule/schedule.module&#x27;).then(m &#x3D;&gt; m.ScheduleModule)&quot; },
+  { path: &#x27;&#x27;         , canActivate: [IdentityGuard], loadChildren: () &#x3D;&gt; &quot;import(&#x27;./schedule/schedule.module&#x27;).then(m &#x3D;&gt; m.ScheduleModule)&quot; },
   { path: &#x27;**&#x27;, pathMatch: &#x27;full&#x27;, redirectTo: &#x27;&#x27; }
 ];
 // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //

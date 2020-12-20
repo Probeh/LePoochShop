@@ -28,7 +28,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content guard">
+               <div class="content injectable">
                    <div class="content-data">
 
 
@@ -37,11 +37,9 @@
 
 
 
-
-
 <ol class="breadcrumb">
-    <li>Guards</li>
-    <li>IdentityGuard</li>
+  <li>Injectables</li>
+  <li>MessageService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -54,19 +52,18 @@
 </ul>
 
 <div class="tab-content">
-        <div class="tab-pane fade active in" id="c-info">
-            <p class="comment">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
             <h3>File</h3>
-            </p>
-            <p class="comment">
-                <code>src/app/@common/services/identity.guard.ts</code>
-            </p>
+        </p>
+        <p class="comment">
+            <code>src/app/@common/services/message.service.ts</code>
+        </p>
 
 
 
 
-
-                <section>
+            <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -80,7 +77,8 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#canActivate">canActivate</a>
+                                    <span class="modifier">Public</span>
+                                <a href="#show">show</a>
                             </li>
                         </ul>
                     </td>
@@ -94,18 +92,18 @@
     </table>
 </section>
 
-                <section>
+            <section>
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(identity: <a href="../injectables/IdentityService.html">IdentityService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(service: ToastrService)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">src/app/@common/services/identity.guard.ts:6</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">src/app/@common/services/message.service.ts:6</a></div>
                             </td>
                         </tr>
 
@@ -123,22 +121,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>identity</td>
+                                                        <td>service</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/IdentityService.html" target="_self" >IdentityService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>router</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                                    <code>ToastrService</code>
                                                         </td>
                                                   
                                                     <td>
@@ -155,7 +141,7 @@
         </table>
 </section>
 
-                <section>
+            <section>
     
     <h3 id="methods">
         Methods
@@ -164,26 +150,28 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="canActivate"></a>
+                    <a name="show"></a>
                     <span class="name">
                         <b>
-                            canActivate
+                            <span class="modifier">Public</span>
+                            show
                         </b>
-                        <a href="#canActivate"><span class="icon ion-ios-link"></span></a>
+                        <a href="#show"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>canActivate(route: <a href="https://angular.io/api/router/ActivatedRouteSnapshot" target="_blank">ActivatedRouteSnapshot</a>, state: <a href="https://angular.io/api/router/RouterStateSnapshot" target="_blank">RouterStateSnapshot</a>)</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>show(title: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, message: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, type: <a href="../undefineds/MessageType.html">MessageType</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="11"
-                            class="link-to-prism">src/app/@common/services/identity.guard.ts:11</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/@common/services/message.service.ts:23</a></div>
                 </td>
             </tr>
 
@@ -199,31 +187,51 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Default value</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>route</td>
+                                    <td>title</td>
                                     <td>
-                                                <code><a href="https://angular.io/api/router/ActivatedRouteSnapshot" target="_blank" >ActivatedRouteSnapshot</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
 
                                     <td>
                                         No
                                     </td>
 
+                                    <td>
+                                    </td>
 
                                 </tr>
                                 <tr>
-                                    <td>state</td>
+                                    <td>message</td>
                                     <td>
-                                                <code><a href="https://angular.io/api/router/RouterStateSnapshot" target="_blank" >RouterStateSnapshot</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
 
                                     <td>
                                         No
                                     </td>
 
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>type</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/enumerations.html#MessageType" target="_self" >MessageType</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>MessageType.Information</code>
+                                    </td>
 
                                 </tr>
                             </tbody>
@@ -232,7 +240,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                     </div>
                     <div class="io-description">
@@ -243,30 +251,57 @@
         </tbody>
     </table>
 </section>
-        </div>
+
+    </div>
 
 
-        <div class="tab-pane fade  tab-source-code" id="c-source">
-            <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable                                                       } from &#x27;@angular/core&#x27;
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from &#x27;@angular/router&#x27;
-import { IdentityService                                                  } from &#x27;@services/identity.service&#x27;
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ToastrService } from &#x27;ngx-toastr&#x27;
+import { Injectable    } from &#x27;@angular/core&#x27;
+import { MessageType   } from &#x27;@enums/message.enum&#x27;
 
 @Injectable()
-export class IdentityGuard implements CanActivate {
+export class MessageService {
   // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
-  constructor(private identity: IdentityService, private router: Router) { }
-  // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
-
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    if (!this.identity.authState) {
-      this.router.navigate([&#x27;account&#x27;]);
-      return false;
-    }
-    return true;
+  constructor(private service: ToastrService) {
+    this.service.toastrConfig.autoDismiss       &#x3D; true                ;
+    this.service.toastrConfig.closeButton       &#x3D; true                ;
+    this.service.toastrConfig.easing            &#x3D; &#x27;ease-in-out&#x27;       ;
+    this.service.toastrConfig.newestOnTop       &#x3D; false               ;
+    this.service.toastrConfig.progressBar       &#x3D; true                ;
+    this.service.toastrConfig.progressAnimation &#x3D; &#x27;decreasing&#x27;        ;
+    this.service.toastrConfig.maxOpened         &#x3D; 2                   ;
+    this.service.toastrConfig.tapToDismiss      &#x3D; true                ;
+    this.service.toastrConfig.preventDuplicates &#x3D; false               ;
+    this.service.toastrConfig.timeOut           &#x3D; 1500                ;
+    this.service.toastrConfig.extendedTimeOut   &#x3D; 1000                ;
+    this.service.toastrConfig.positionClass     &#x3D; &#x27;toast-bottom-right&#x27;;
   }
-}</code></pre>
-        </div>
+  // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
+  public show(title: string, message: string, type: MessageType &#x3D; MessageType.Information) {
+    switch (type) {
+      case MessageType.Error:
+        this.service.error(message, title);
+        break;
+        case MessageType.Information:
+        this.service.info(message, title);
+        break;
+        case MessageType.Success:
+        this.service.success(message, title);
+        break;
+        case MessageType.Warning:
+        this.service.warning(message, title);
+        break;
+    }
+  }
+}
+
+</code></pre>
+    </div>
+
 </div>
+
+
 
 
 
@@ -293,8 +328,8 @@ export class IdentityGuard implements CanActivate {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'guard';
-            var COMPODOC_CURRENT_PAGE_URL = 'IdentityGuard.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'MessageService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

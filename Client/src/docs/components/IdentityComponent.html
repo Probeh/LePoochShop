@@ -238,17 +238,33 @@ export class IdentityComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;
-  identity works!
-&lt;/p&gt;
-</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;div class&#x3D;&quot;card shadow mb-3&quot;&gt;
+    &lt;div class&#x3D;&quot;card-header p-1 bg-warning&quot;&gt;&lt;/div&gt;
+    &lt;div class&#x3D;&quot;card-title jumbotron bg-light m-0&quot;&gt;
+      &lt;i class&#x3D;&quot;fa fa-user-plus text-info ml-3&quot;&gt;&lt;/i&gt; Login to continue
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col&quot;&gt;
+      &lt;app-login&gt;&lt;/app-login&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col&quot;&gt;
+      &lt;app-register&gt;&lt;/app-register&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
                     <code>./identity.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">@import &quot;themes.scss&quot;;
+
+.container {
+  margin: 5% auto 0px;
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -276,8 +292,8 @@ export class IdentityComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>  identity works!</p></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentComponent', 'selector': 'app-appointment'},{'name': 'DialogComponent', 'selector': 'app-dialog'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IdentityComponent', 'selector': 'app-identity'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ScheduleComponent', 'selector': 'app-schedule'}];
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <div class="card shadow mb-3">    <div class="card-header p-1 bg-warning"></div>    <div class="card-title jumbotron bg-light m-0">      <i class="fa fa-user-plus text-info ml-3"></i> Login to continue    </div>  </div>  <div class="row">    <div class="col">      <app-login></app-login>    </div>    <div class="col">      <app-register></app-register>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentComponent', 'selector': 'app-appointment'},{'name': 'AppointmentsComponent', 'selector': 'app-appointments'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IdentityComponent', 'selector': 'app-identity'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ScheduleComponent', 'selector': 'app-schedule'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'IdentityComponent'};
 </script>

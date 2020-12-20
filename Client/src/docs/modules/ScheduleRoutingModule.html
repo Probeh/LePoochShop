@@ -35,7 +35,7 @@
 
 <ol class="breadcrumb">
     <li>Modules</li>
-    <li>IdentityRoutingModule</li>
+    <li>ScheduleRoutingModule</li>
 </ol>
 
 
@@ -55,7 +55,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/identity/identity.routing.module.ts</code>
+            <code>src/app/schedule/schedule.routing.module.ts</code>
         </p>
 
 
@@ -73,23 +73,18 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule                  } from &#x27;@angular/core&#x27;
 import { RouterModule     , Routes } from &#x27;@angular/router&#x27;
-import { IdentityComponent         } from &#x27;@identity/identity.component&#x27;         ;
-import { LoginComponent            } from &#x27;@identity/login/login.component&#x27;
-import { RegisterComponent         } from &#x27;@identity/register/register.component&#x27;
+import { ScheduleComponent         } from &#x27;@schedule/schedule.component&#x27;
 
 const routes: Routes &#x3D; [
   // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
-  { path: &#x27;&#x27;        , component:         IdentityComponent          },
-  { path: &#x27;login&#x27;   , component:         LoginComponent             },
-  { path: &#x27;register&#x27;, component:         RegisterComponent          },
-  { path: &#x27;**&#x27;      , pathMatch: &#x27;full&#x27;, redirectTo       : &#x27;login&#x27; }
+  { path: &#x27;&#x27;, component: ScheduleComponent },
 ];
 // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class IdentityRoutingModule { }
+export class ScheduleRoutingModule { }
 </code></pre>
     </div>
 </div>
@@ -125,7 +120,7 @@ export class IdentityRoutingModule { }
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
-            var COMPODOC_CURRENT_PAGE_URL = 'IdentityRoutingModule.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'ScheduleRoutingModule.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

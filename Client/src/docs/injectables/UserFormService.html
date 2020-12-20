@@ -39,7 +39,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li>DialogService</li>
+  <li>UserFormService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -57,7 +57,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/@common/services/dialog.service.ts</code>
+            <code>src/app/@common/services/user-form.service.ts</code>
         </p>
 
 
@@ -67,25 +67,6 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Properties</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#hideDialog$">hideDialog$</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#showDialog$">showDialog$</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -97,11 +78,11 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#hideDialog">hideDialog</a>
+                                <a href="#generateLoginForm">generateLoginForm</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#showDialog">showDialog</a>
+                                <a href="#generateRegisterForm">generateRegisterForm</a>
                             </li>
                         </ul>
                     </td>
@@ -126,7 +107,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/@common/services/dialog.service.ts:7</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="5" class="link-to-prism">src/app/@common/services/user-form.service.ts:5</a></div>
                             </td>
                         </tr>
 
@@ -143,28 +124,28 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="hideDialog"></a>
+                    <a name="generateLoginForm"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Public</span>
-                            hideDialog
+                            generateLoginForm
                         </b>
-                        <a href="#hideDialog"><span class="icon ion-ios-link"></span></a>
+                        <a href="#generateLoginForm"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>hideDialog()</code>
+                    <code>generateLoginForm()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/@common/services/dialog.service.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="9"
+                            class="link-to-prism">src/app/@common/services/user-form.service.ts:9</a></div>
                 </td>
             </tr>
 
@@ -173,7 +154,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                 </td>
@@ -184,28 +165,28 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="showDialog"></a>
+                    <a name="generateRegisterForm"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Public</span>
-                            showDialog
+                            generateRegisterForm
                         </b>
-                        <a href="#showDialog"><span class="icon ion-ios-link"></span></a>
+                        <a href="#generateRegisterForm"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>showDialog()</code>
+                    <code>generateRegisterForm()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="11"
-                            class="link-to-prism">src/app/@common/services/dialog.service.ts:11</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">src/app/@common/services/user-form.service.ts:15</a></div>
                 </td>
             </tr>
 
@@ -214,7 +195,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                 </td>
@@ -222,98 +203,31 @@
         </tbody>
     </table>
 </section>
-            <section>
-    
-        <h3 id="inputs">
-            Properties
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="hideDialog$"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            hideDialog$</b>
-                            <a href="#hideDialog$"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code>Subject&lt;boolean&gt;</code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>new Subject()</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/@common/services/dialog.service.ts:7</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="showDialog$"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            showDialog$</b>
-                            <a href="#showDialog$"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code>Subject&lt;boolean&gt;</code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>new Subject()</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">src/app/@common/services/dialog.service.ts:6</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-</section>
 
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Subject } from &#x27;rxjs&#x27;
-import { Injectable } from &#x27;@angular/core&#x27;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { FormControl, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
 
 @Injectable()
-export class DialogService {
-  public showDialog$: Subject&lt;boolean&gt; &#x3D; new Subject();
-  public hideDialog$: Subject&lt;boolean&gt; &#x3D; new Subject();
+export class UserFormService {
   // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
   constructor() { }
   // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
-  public showDialog() {
-    this.showDialog$.next();
+  public generateLoginForm() {
+    return new FormGroup({
+      &#x27;username&#x27;: new FormControl(&#x27;&#x27;, Validators.required),
+      &#x27;password&#x27;: new FormControl(&#x27;&#x27;, Validators.required)
+    });
   }
-  public hideDialog() {
-    this.hideDialog$.next();
+  public generateRegisterForm() {
+    return new FormGroup({
+      &#x27;username&#x27;: new FormControl(&#x27;&#x27;,  Validators.required                   ),
+      &#x27;password&#x27;: new FormControl(&#x27;&#x27;,  Validators.required                   ),
+      &#x27;email&#x27;   : new FormControl(&#x27;&#x27;, [Validators.required, Validators.email]),
+    });
   }
 }
 </code></pre>
@@ -349,7 +263,7 @@ export class DialogService {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'DialogService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'UserFormService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

@@ -127,19 +127,23 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
 
 @Component({
-  selector: &#x27;app-root&#x27;,
-  templateUrl: &#x27;./app.component.html&#x27;,
-  styleUrls: [&#x27;./app.component.scss&#x27;]
+  selector   :  &#x27;app-root&#x27;            ,
+  templateUrl:  &#x27;./app.component.html&#x27;,
+  styleUrls  : [&#x27;./app.component.scss&#x27;]
 })
-export class AppComponent {
-
-}
+export class AppComponent { }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;app-navigation&gt;&lt;/app-navigation&gt;
-&lt;router-outlet&gt;&lt;/router-outlet&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;content&quot;&gt;
+  &lt;div class&#x3D;&quot;content-header shadow&quot;&gt;
+    &lt;app-navigation&gt;&lt;/app-navigation&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;content-main&quot;&gt;
+    &lt;router-outlet&gt;&lt;/router-outlet&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -148,6 +152,20 @@ export class AppComponent {
                 </p>
                 <pre class="line-numbers"><code class="language-scss">@import &quot;themes&quot;;
 @import &quot;styles&quot;;
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  .content-header {
+    height: 50px;
+  }
+  .content-main {
+    flex: auto;
+    overflow-y: auto;
+  }
+}
 
 .view-port {
   height: 100vh;
@@ -220,8 +238,8 @@ export class AppComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-navigation></app-navigation><router-outlet></router-outlet></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentComponent', 'selector': 'app-appointment'},{'name': 'DialogComponent', 'selector': 'app-dialog'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IdentityComponent', 'selector': 'app-identity'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ScheduleComponent', 'selector': 'app-schedule'}];
+        var COMPONENT_TEMPLATE = '<div><div class="content">  <div class="content-header shadow">    <app-navigation></app-navigation>  </div>  <div class="content-main">    <router-outlet></router-outlet>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentComponent', 'selector': 'app-appointment'},{'name': 'AppointmentsComponent', 'selector': 'app-appointments'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IdentityComponent', 'selector': 'app-identity'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ScheduleComponent', 'selector': 'app-schedule'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>

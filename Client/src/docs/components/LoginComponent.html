@@ -132,7 +132,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#loginForm">loginForm</a>
+                                <a href="#formGroup">formGroup</a>
                             </li>
                         </ul>
                     </td>
@@ -146,6 +146,10 @@
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getErrors">getErrors</a>
+                            </li>
                             <li>
                                     <span class="modifier">Public</span>
                                 <a href="#login">login</a>
@@ -171,12 +175,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(account: <a href="../injectables/IdentityService.html">IdentityService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(identity: <a href="../injectables/IdentityService.html">IdentityService</a>, formService: <a href="../injectables/UserFormService.html">UserFormService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/identity/login/login.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/identity/login/login.component.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -194,10 +198,22 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>account</td>
+                                                        <td>identity</td>
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/IdentityService.html" target="_self" >IdentityService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>formService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserFormService.html" target="_self" >UserFormService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -239,6 +255,78 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="getErrors"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getErrors
+                        </b>
+                        <a href="#getErrors"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getErrors(control: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/identity/login/login.component.ts:50</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>control</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="login"></a>
                     <span class="name">
                         <b>
@@ -259,8 +347,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/identity/login/login.component.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/identity/login/login.component.ts:20</a></div>
                 </td>
             </tr>
 
@@ -298,8 +386,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="21"
-                            class="link-to-prism">src/app/identity/login/login.component.ts:21</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/identity/login/login.component.ts:18</a></div>
                 </td>
             </tr>
 
@@ -325,12 +413,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="loginForm"></a>
+                        <a name="formGroup"></a>
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            loginForm</b>
-                            <a href="#loginForm"><span class="icon ion-ios-link"></span></a>
+                            formGroup</b>
+                            <a href="#formGroup"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -342,7 +430,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/identity/login/login.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/identity/login/login.component.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -355,10 +443,13 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import { FormControl, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
-import { Router } from &#x27;@angular/router&#x27;;
-import { IdentityService } from &#x27;@services/identity.service&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpErrorResponse         } from &#x27;@angular/common/http&#x27;
+import { Component        , OnInit } from &#x27;@angular/core&#x27;
+import { FormGroup                 } from &#x27;@angular/forms&#x27;
+import { Router                    } from &#x27;@angular/router&#x27;
+import { Account                   } from &#x27;@models/account.model&#x27;
+import { IdentityService           } from &#x27;@services/identity.service&#x27;
+import { UserFormService           } from &#x27;@services/user-form.service&#x27;
 
 @Component({
   selector: &#x27;app-login&#x27;,
@@ -366,77 +457,154 @@ import { IdentityService } from &#x27;@services/identity.service&#x27;;
   styleUrls: [&#x27;./login.component.scss&#x27;]
 })
 export class LoginComponent implements OnInit {
-  public loginForm: FormGroup;
-
-  constructor(private account: IdentityService, private router: Router) {
-    this.loginForm &#x3D; new FormGroup({
-      username: new FormControl(&#x27;&#x27;, Validators.required),
-      password: new FormControl(&#x27;&#x27;, Validators.required)
-    })
-  }
-
-  ngOnInit() { }
-
+  public formGroup: FormGroup;
+  // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
+  constructor(private identity: IdentityService, private formService: UserFormService, private router: Router) { }
+  ngOnInit() { this.formGroup &#x3D; this.formService.generateLoginForm(); }
+  // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
   public login() {
-    this.account.userLogin(this.loginForm.value)
-      .subscribe({
-        next: result &#x3D;&gt; this.router.navigate([&#x27;../../schedule&#x27;]),
-        error: error &#x3D;&gt; console.log(error)
+    const value &#x3D; this.formGroup.value;
+    this.identity.userLogin(new Account(value.username, value.password, value.email))
+      .then(result &#x3D;&gt; {
+        this.formGroup.reset();
+        this.router.navigateByUrl(&#x27;schedule&#x27;);
+      })
+      .catch((response: HttpErrorResponse) &#x3D;&gt; {
+        if (response.status &#x3D;&#x3D; 401) {
+          Object.keys(response.error)
+            .forEach(field &#x3D;&gt; {
+              if (this.formGroup.controls[field.toLowerCase()]) {
+                this.formGroup.controls[field.toLowerCase()]?.setErrors(
+                  field.toLowerCase().match(&#x27;username&#x27;)
+                    ? { username: response.error[field][&#x27;errors&#x27;][0][&#x27;errorMessage&#x27;] }
+                    : { password: response.error[field][&#x27;errors&#x27;][0][&#x27;errorMessage&#x27;] });
+              }
+              else this.formGroup.setErrors({ &#x27;credentials&#x27;: response.error })
+            });
+        }
+        else if (response.status &#x3D;&#x3D; 400) {
+          Object.keys(response.error.errors)
+            .forEach(field &#x3D;&gt; {
+              this.formGroup.controls[field.toLowerCase()]?.setErrors(field.toLowerCase().match(&#x27;username&#x27;)
+                ? { username: response.error.errors[field] }
+                : { password: response.error.errors[field] });
+            });
+        }
       });
   }
-
-}
-</code></pre>
+  public getErrors(control: string) {
+    return Object.keys(this.formGroup.get(control).errors);
+  }
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row&quot;&gt;
-  &lt;div
-    class&#x3D;&quot;container shadow&quot;
-    style&#x3D;&quot;max-width: 750px;&quot;
-  &gt;
-    &lt;div class&#x3D;&quot;container-header&quot;&gt;&lt;/div&gt;
-    &lt;div class&#x3D;&quot;container-title&quot;&gt;&lt;i class&#x3D;&quot;fa fa-user-circle-o&quot;&gt;&lt;/i&gt; Login&lt;/div&gt;
-    &lt;div class&#x3D;&quot;container-body&quot;&gt;
-      &lt;form [formGroup]&#x3D;&quot;this.loginForm&quot;&gt;
-        &lt;div class&#x3D;&quot;input-group&quot;&gt;
-          &lt;label for&#x3D;&quot;username&quot;&gt;&lt;i class&#x3D;&quot;fa fa-user&quot;&gt;&lt;/i&gt; Username:&lt;/label&gt;
-          &lt;input
-            type&#x3D;&quot;text&quot;
-            name&#x3D;&quot;username&quot;
-            formControlName&#x3D;&quot;username&quot;
-            placeholder&#x3D;&quot;Enter your username&quot;
-            id&#x3D;&quot;username&quot;
-            class&#x3D;&quot;input-item&quot;
-          &gt;
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;input-group&quot;&gt;
-          &lt;label for&#x3D;&quot;password&quot;&gt;&lt;i class&#x3D;&quot;fa fa-lock&quot;&gt;&lt;/i&gt; Password:&lt;/label&gt;
-          &lt;input
-            type&#x3D;&quot;password&quot;
-            name&#x3D;&quot;password&quot;
-            formControlName&#x3D;&quot;password&quot;
-            placeholder&#x3D;&quot;Enter your password&quot;
-            id&#x3D;&quot;password&quot;
-            class&#x3D;&quot;input-item&quot;
-          &gt;
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;input-group&quot;&gt;
-          &lt;button
-            [disabled]&#x3D;&quot;this.loginForm.invalid&quot;
-            (click)&#x3D;&quot;this.login()&quot;
-          &gt;Submit! &lt;i class&#x3D;&quot;fa fa-check&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-        &lt;/div&gt;
-      &lt;/form&gt;
-      &lt;div
-        class&#x3D;&quot;input-group&quot;
-        style&#x3D;&quot;text-align: center;&quot;
-      &gt;
-        &lt;a routerLink&#x3D;&quot;../register&quot;&gt;Click here to register!&lt;/a&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;form
+  (ngSubmit)&#x3D;&quot;this.login()&quot;
+  [formGroup]&#x3D;&quot;this.formGroup&quot;
+  class&#x3D;&quot;card shadow&quot;
+&gt;
+  &lt;div class&#x3D;&quot;card-header p-1 bg-success&quot;&gt;&lt;/div&gt;
+  &lt;div class&#x3D;&quot;card-title&quot;&gt;
+    &lt;i class&#x3D;&quot;fa fa-user-circle-o mr-2&quot;&gt;&lt;/i&gt;
+    Existing User Login
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;card-body&quot;&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+      &lt;div class&#x3D;&quot;col&quot;&gt;
+        &lt;ng-container
+          [ngTemplateOutlet]&#x3D;&quot;loginErrors&quot;
+          [ngTemplateOutletContext]&#x3D;&quot;{ field: &#x27;credentials&#x27; }&quot;
+        &gt;&lt;/ng-container&gt;
+
       &lt;/div&gt;
     &lt;/div&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+      &lt;div class&#x3D;&quot;col form-group&quot;&gt;
+        &lt;label for&#x3D;&quot;username&quot;&gt;Username:&lt;/label&gt;
+        &lt;div style&#x3D;&quot;display: flex; align-items: center; justify-content: center;&quot;&gt;
+          &lt;i
+            class&#x3D;&quot;fa fa-user text-info&quot;
+            style&#x3D;&quot;font-size: 16px; padding: 0px 5px 0px 0px;&quot;
+          &gt;&lt;/i&gt;
+          &lt;input
+            class&#x3D;&quot;form-control form-control-sm&quot;
+            formControlName&#x3D;&quot;username&quot;
+            id&#x3D;&quot;login-username&quot;
+            name&#x3D;&quot;username&quot;
+            placeholder&#x3D;&quot;Username:&quot;
+            type&#x3D;&quot;text&quot;
+          &gt;
+        &lt;/div&gt;
+        &lt;ng-container
+          [ngTemplateOutlet]&#x3D;&quot;loginErrors&quot;
+          [ngTemplateOutletContext]&#x3D;&quot;{ field: &#x27;username&#x27; }&quot;
+        &gt;&lt;/ng-container&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+      &lt;div class&#x3D;&quot;col form-group&quot;&gt;
+        &lt;label for&#x3D;&quot;password&quot;&gt;Password:&lt;/label&gt;
+        &lt;div style&#x3D;&quot;display: flex; align-items: center; justify-content: center;&quot;&gt;
+          &lt;i
+            class&#x3D;&quot;fa fa-lock text-info&quot;
+            style&#x3D;&quot;font-size: 16px; padding: 0px 5px 0px 0px;&quot;
+          &gt;&lt;/i&gt;
+          &lt;input
+            class&#x3D;&quot;form-control form-control-sm&quot;
+            formControlName&#x3D;&quot;password&quot;
+            id&#x3D;&quot;login-password&quot;
+            name&#x3D;&quot;password&quot;
+            placeholder&#x3D;&quot;Password:&quot;
+            type&#x3D;&quot;password&quot;
+          &gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;ng-container
+      [ngTemplateOutlet]&#x3D;&quot;loginErrors&quot;
+      [ngTemplateOutletContext]&#x3D;&quot;{ field: &#x27;password&#x27; }&quot;
+    &gt;&lt;/ng-container&gt;
   &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+
+  &lt;div class&#x3D;&quot;card-footer&quot;&gt;
+    &lt;button
+      [disabled]&#x3D;&quot;this.formGroup.invalid&quot;
+      class&#x3D;&quot;btn btn-sm btn-block btn-outline-info&quot;
+      type&#x3D;&quot;submit&quot;
+    &gt;
+      &lt;i class&#x3D;&quot;fa fa-check-circle mr-1&quot;&gt;&lt;/i&gt; Login&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+
+&lt;ng-template
+  #loginErrors
+  let-field&#x3D;&quot;field&quot;
+&gt;
+  &lt;!-- Control Error --&gt;
+  &lt;div
+    *ngIf&#x3D;&quot;this.formGroup.controls[field] &amp;&amp; this.formGroup.get(field).touched &amp;&amp; this.formGroup.get(field).invalid&quot;
+    class&#x3D;&quot;alert alert-danger mt-2&quot;
+    role&#x3D;&quot;alert&quot;
+  &gt;
+    &lt;strong&gt;&lt;i class&#x3D;&quot;fa fa-exclamation-triangle mr-2&quot;&gt;&lt;/i&gt; Invalid {{field | titlecase}}&lt;/strong&gt;
+    &lt;div *ngFor&#x3D;&quot;let message of this.getErrors(field); let index &#x3D; index&quot;&gt;
+      &lt;div *ngIf&#x3D;&quot;this.formGroup.get(field).errors[message].toString() &#x3D;&#x3D; &#x27;true&#x27;; then client; else server&quot;&gt;
+      &lt;/div&gt;
+      &lt;ng-template #client&gt;{{field | titlecase}} is required&lt;/ng-template&gt;
+      &lt;ng-template #server&gt;{{this.formGroup.get(field).errors[message]}}&lt;/ng-template&gt;
+    &lt;/div&gt;
+    &lt;!-- Form Error --&gt;
+    &lt;div
+      *ngIf&#x3D;&quot;field &#x3D;&#x3D; &#x27;credentials&#x27; &amp;&amp; this.formGroup.hasError(field)&quot;
+      class&#x3D;&quot;alert alert-danger mt-2&quot;
+      role&#x3D;&quot;alert&quot;
+    &gt;
+      &lt;strong&gt;&lt;i class&#x3D;&quot;fa fa-exclamation-triangle mr-2&quot;&gt;&lt;/i&gt; Login Failed!&lt;/strong&gt;
+      &lt;div&gt;{{this.formGroup.errors[field]}}&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/ng-template&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -471,8 +639,8 @@ export class LoginComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="row">  <div    class="container shadow"    style="max-width: 750px;"  >    <div class="container-header"></div>    <div class="container-title"><i class="fa fa-user-circle-o"></i> Login</div>    <div class="container-body">      <form [formGroup]="this.loginForm">        <div class="input-group">          <label for="username"><i class="fa fa-user"></i> Username:</label>          <input            type="text"            name="username"            formControlName="username"            placeholder="Enter your username"            id="username"            class="input-item"          >        </div>        <div class="input-group">          <label for="password"><i class="fa fa-lock"></i> Password:</label>          <input            type="password"            name="password"            formControlName="password"            placeholder="Enter your password"            id="password"            class="input-item"          >        </div>        <div class="input-group">          <button            [disabled]="this.loginForm.invalid"            (click)="this.login()"          >Submit! <i class="fa fa-check"></i></button>        </div>      </form>      <div        class="input-group"        style="text-align: center;"      >        <a routerLink="../register">Click here to register!</a>      </div>    </div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentComponent', 'selector': 'app-appointment'},{'name': 'DialogComponent', 'selector': 'app-dialog'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IdentityComponent', 'selector': 'app-identity'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ScheduleComponent', 'selector': 'app-schedule'}];
+        var COMPONENT_TEMPLATE = '<div><form  (ngSubmit)="this.login()"  [formGroup]="this.formGroup"  class="card shadow">  <div class="card-header p-1 bg-success"></div>  <div class="card-title">    <i class="fa fa-user-circle-o mr-2"></i>    Existing User Login  </div>  <div class="card-body">    <div class="row">      <div class="col">        <ng-container          [ngTemplateOutlet]="loginErrors"          [ngTemplateOutletContext]="{ field: \'credentials\' }"        ></ng-container>      </div>    </div>    <div class="row">      <div class="col form-group">        <label for="username">Username:</label>        <div style="display: flex; align-items: center; justify-content: center;">          <i            class="fa fa-user text-info"            style="font-size: 16px; padding: 0px 5px 0px 0px;"          ></i>          <input            class="form-control form-control-sm"            formControlName="username"            id="login-username"            name="username"            placeholder="Username:"            type="text"          >        </div>        <ng-container          [ngTemplateOutlet]="loginErrors"          [ngTemplateOutletContext]="{ field: \'username\' }"        ></ng-container>      </div>    </div>    <div class="row">      <div class="col form-group">        <label for="password">Password:</label>        <div style="display: flex; align-items: center; justify-content: center;">          <i            class="fa fa-lock text-info"            style="font-size: 16px; padding: 0px 5px 0px 0px;"          ></i>          <input            class="form-control form-control-sm"            formControlName="password"            id="login-password"            name="password"            placeholder="Password:"            type="password"          >        </div>      </div>    </div>    <ng-container      [ngTemplateOutlet]="loginErrors"      [ngTemplateOutletContext]="{ field: \'password\' }"    ></ng-container>  </div>  <div class="card-footer">    <button      [disabled]="this.formGroup.invalid"      class="btn btn-sm btn-block btn-outline-info"      type="submit"    >      <i class="fa fa-check-circle mr-1"></i> Login</button>  </div></form><ng-template  #loginErrors  let-field="field">  <!-- Control Error -->  <div    *ngIf="this.formGroup.controls[field] && this.formGroup.get(field).touched && this.formGroup.get(field).invalid"    class="alert alert-danger mt-2"    role="alert"  >    <strong><i class="fa fa-exclamation-triangle mr-2"></i> Invalid {{field | titlecase}}</strong>    <div *ngFor="let message of this.getErrors(field); let index = index">      <div *ngIf="this.formGroup.get(field).errors[message].toString() == \'true\'; then client; else server">      </div>      <ng-template #client>{{field | titlecase}} is required</ng-template>      <ng-template #server>{{this.formGroup.get(field).errors[message]}}</ng-template>    </div>    <!-- Form Error -->    <div      *ngIf="field == \'credentials\' && this.formGroup.hasError(field)"      class="alert alert-danger mt-2"      role="alert"    >      <strong><i class="fa fa-exclamation-triangle mr-2"></i> Login Failed!</strong>      <div>{{this.formGroup.errors[field]}}</div>    </div>  </div></ng-template></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentComponent', 'selector': 'app-appointment'},{'name': 'AppointmentsComponent', 'selector': 'app-appointments'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IdentityComponent', 'selector': 'app-identity'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ScheduleComponent', 'selector': 'app-schedule'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
 </script>

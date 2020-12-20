@@ -62,7 +62,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/@common/components/navigation/navigation.component.ts</code>
+    <code>src/app/@common/navigation/navigation.component.ts</code>
 </p>
 
 
@@ -147,11 +147,11 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#ngOnInit">ngOnInit</a>
+                                    <span class="modifier">Public</span>
+                                <a href="#logout">logout</a>
                             </li>
                             <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#showMessage">showMessage</a>
+                                <a href="#ngOnInit">ngOnInit</a>
                             </li>
                         </ul>
                     </td>
@@ -171,12 +171,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(identity: <a href="../injectables/IdentityService.html">IdentityService</a>, dialog: <a href="../injectables/DialogService.html">DialogService</a>)</code>
+<code>constructor(identity: <a href="../injectables/IdentityService.html">IdentityService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/@common/components/navigation/navigation.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/@common/navigation/navigation.component.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -206,10 +206,10 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>dialog</td>
+                                                        <td>router</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/DialogService.html" target="_self" >DialogService</a></code>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -239,26 +239,28 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="ngOnInit"></a>
+                    <a name="logout"></a>
                     <span class="name">
                         <b>
-                            ngOnInit
+                            <span class="modifier">Public</span>
+                            logout
                         </b>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        <a href="#logout"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>ngOnInit()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>logout()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">src/app/@common/components/navigation/navigation.component.ts:24</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/@common/navigation/navigation.component.ts:22</a></div>
                 </td>
             </tr>
 
@@ -278,28 +280,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="showMessage"></a>
+                    <a name="ngOnInit"></a>
                     <span class="name">
                         <b>
-                            <span class="modifier">Public</span>
-                            showMessage
+                            ngOnInit
                         </b>
-                        <a href="#showMessage"><span class="icon ion-ios-link"></span></a>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>showMessage()</code>
+<code>ngOnInit()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/app/@common/components/navigation/navigation.component.ts:26</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/@common/navigation/navigation.component.ts:20</a></div>
                 </td>
             </tr>
 
@@ -342,7 +342,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/@common/components/navigation/navigation.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/@common/navigation/navigation.component.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -355,10 +355,10 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;
-import { Account } from &#x27;@models/account.model&#x27;
-import { DialogService } from &#x27;@services/dialog.service&#x27;;
-import { IdentityService } from &#x27;@services/identity.service&#x27;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component      , OnInit } from &#x27;@angular/core&#x27;
+import { Router                  } from &#x27;@angular/router&#x27;           ;
+import { Account                 } from &#x27;@models/account.model&#x27;
+import { IdentityService         } from &#x27;@services/identity.service&#x27;
 
 @Component({
   selector: &#x27;app-navigation&#x27;,
@@ -367,21 +367,18 @@ import { IdentityService } from &#x27;@services/identity.service&#x27;
 })
 export class NavigationComponent implements OnInit {
   public account: Account;
-  constructor(private identity: IdentityService, private dialog: DialogService) {
-    this.identity.identity$.subscribe({
-      next: result &#x3D;&gt; {
-        console.log(result)
-        this.account &#x3D; result;
-        console.log(this.account);
-      }
-    });
+  constructor(private identity: IdentityService, private router: Router) {
     this.account &#x3D; this.identity.identity;
+    this.identity.identity$.subscribe({
+      next: (result: Account) &#x3D;&gt; this.account &#x3D; result
+    });
   }
 
   ngOnInit() { }
 
-  public showMessage() {
-    this.dialog.showDialog()
+  public logout() {
+    this.identity.userLogout();
+    this.router.navigate([&#x27;account&#x27;]);
   }
 }
 </code></pre>
@@ -401,11 +398,31 @@ export class NavigationComponent implements OnInit {
       &gt;&lt;i class&#x3D;&quot;fa fa-code&quot;&gt;&lt;/i&gt; &lt;span class&#x3D;&quot;btn-text&quot;&gt;Api Docs&lt;/span&gt;&lt;/a&gt;
     &lt;/div&gt;
     &lt;div class&#x3D;&quot;nav-end&quot;&gt;
+      &lt;div class&#x3D;&quot;dropdown&quot;&gt;
+        &lt;button
+          class&#x3D;&quot;btn nav-action&quot;
+          data-toggle&#x3D;&quot;dropdown&quot;
+        &gt;
+          &lt;span *ngIf&#x3D;&quot;this.account&quot;&gt; {{this.account?.userName}} &lt;/span&gt;
+          &lt;i class&#x3D;&quot;fa fa-user ml-2&quot;&gt;&lt;/i&gt;
+        &lt;/button&gt;
+        &lt;div class&#x3D;&quot;dropdown-menu&quot;&gt;
+          &lt;a
+            (click)&#x3D;&quot;this.logout()&quot;
+            *ngIf&#x3D;&quot;this.account&quot;
+            class&#x3D;&quot;dropdown-item text-info&quot;
+          &gt;&lt;i class&#x3D;&quot;fa fa-user mr-2&quot;&gt;&lt;/i&gt; Logout&lt;/a&gt;
+          &lt;a
+            routerLink&#x3D;&quot;account&quot;
+            *ngIf&#x3D;&quot;!this.account&quot;
+            class&#x3D;&quot;dropdown-item text-info&quot;
+          &gt;&lt;i class&#x3D;&quot;fa fa-user mr-2&quot;&gt;&lt;/i&gt; Login&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
       &lt;a
-        href&#x3D;&quot;https://github.com/Probeh/CameraMap&quot;
+        href&#x3D;&quot;https://github.com/Probeh/LePoochShop&quot;
         target&#x3D;&quot;_blank&quot;
         class&#x3D;&quot;btn nav-action&quot;
-        routerLink&#x3D;&quot;&quot;
       &gt;&lt;i class&#x3D;&quot;fa fa-github&quot;&gt;&lt;/i&gt;&lt;/a&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -438,13 +455,19 @@ export class NavigationComponent implements OnInit {
     justify-content: space-between;
 
     .nav-start {
+      display: flex;
+      .nav-action {
+        margin-left: 20px;
+      }
     }
     .nav-end {
+      display: flex;
     }
   }
-
+  .fa {
+    font-size: 18px;
+  }
   .nav-action {
-    margin-left: 20px;
     color: white;
     display: flex;
     align-items: center;
@@ -455,7 +478,8 @@ export class NavigationComponent implements OnInit {
 }
 .btn-text {
   margin-left: 5px;
-}</code></pre>
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -483,8 +507,8 @@ export class NavigationComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="navigation">  <div class="nav-brand">    <i class="fa fa-scissors"></i> LePooch Shop  </div>  <div class="nav-actions">    <div class="nav-start">      <a        class="btn nav-action"        target="_blank"        href="../../docs/index.html"      ><i class="fa fa-code"></i> <span class="btn-text">Api Docs</span></a>    </div>    <div class="nav-end">      <a        href="https://github.com/Probeh/CameraMap"        target="_blank"        class="btn nav-action"        routerLink=""      ><i class="fa fa-github"></i></a>    </div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentComponent', 'selector': 'app-appointment'},{'name': 'DialogComponent', 'selector': 'app-dialog'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IdentityComponent', 'selector': 'app-identity'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ScheduleComponent', 'selector': 'app-schedule'}];
+        var COMPONENT_TEMPLATE = '<div><div class="navigation">  <div class="nav-brand">    <i class="fa fa-scissors"></i> LePooch Shop  </div>  <div class="nav-actions">    <div class="nav-start">      <a        class="btn nav-action"        target="_blank"        href="../../docs/index.html"      ><i class="fa fa-code"></i> <span class="btn-text">Api Docs</span></a>    </div>    <div class="nav-end">      <div class="dropdown">        <button          class="btn nav-action"          data-toggle="dropdown"        >          <span *ngIf="this.account"> {{this.account?.userName}} </span>          <i class="fa fa-user ml-2"></i>        </button>        <div class="dropdown-menu">          <a            (click)="this.logout()"            *ngIf="this.account"            class="dropdown-item text-info"          ><i class="fa fa-user mr-2"></i> Logout</a>          <a            routerLink="account"            *ngIf="!this.account"            class="dropdown-item text-info"          ><i class="fa fa-user mr-2"></i> Login</a>        </div>      </div>      <a        href="https://github.com/Probeh/LePoochShop"        target="_blank"        class="btn nav-action"      ><i class="fa fa-github"></i></a>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentComponent', 'selector': 'app-appointment'},{'name': 'AppointmentsComponent', 'selector': 'app-appointments'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IdentityComponent', 'selector': 'app-identity'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ScheduleComponent', 'selector': 'app-schedule'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'NavigationComponent'};
 </script>
