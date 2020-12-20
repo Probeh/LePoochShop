@@ -87,16 +87,20 @@
     role="alert"
   >
     <strong><i class="fa fa-exclamation-triangle mr-2"></i> Invalid {{field | titlecase}}</strong>
-    <div *ngFor="let message of this.getErrors(field); let index = index">{{index + 1}}.
-      {{this.formGroup.get(field).errors[message]}}</div>
-  </div>
-  <!-- Form Error -->
-  <div
-    *ngIf="field == 'credentials' && this.formGroup.hasError(field)"
-    class="alert alert-danger mt-2"
-    role="alert"
-  >
-    <strong><i class="fa fa-exclamation-triangle mr-2"></i> Login Failed!</strong>
-    <div>{{this.formGroup.errors[field]}}</div>
+    <div *ngFor="let message of this.getErrors(field); let index = index">
+      <div *ngIf="this.formGroup.get(field).errors[message].toString() == 'true'; then client; else server">
+      </div>
+      <ng-template #client>{{field | titlecase}} is required</ng-template>
+      <ng-template #server>{{this.formGroup.get(field).errors[message]}}</ng-template>
+    </div>
+    <!-- Form Error -->
+    <div
+      *ngIf="field == 'credentials' && this.formGroup.hasError(field)"
+      class="alert alert-danger mt-2"
+      role="alert"
+    >
+      <strong><i class="fa fa-exclamation-triangle mr-2"></i> Login Failed!</strong>
+      <div>{{this.formGroup.errors[field]}}</div>
+    </div>
   </div>
 </ng-template>
