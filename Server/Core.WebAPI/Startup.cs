@@ -1,9 +1,12 @@
 using AutoMapper;
+using Core.Shared.Context;
 using Core.Shared.Helpers;
+using Core.Shared.Models.Identity;
 using Core.WebAPI.Extensions;
 using Core.WebAPI.Sockets;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -44,6 +47,22 @@ namespace Core.WebAPI
             // ======================================= //
             if (env.IsDevelopment())
             {
+            // ======================================= //
+            //  Populating database with random values
+            // ======================================= //
+                var context = builder
+                    .ApplicationServices
+                    .CreateScope()
+                    .ServiceProvider
+                    .GetRequiredService<ApplicationContext>();
+                var manager = builder
+                    .ApplicationServices
+                    .CreateScope()
+                    .ServiceProvider
+                    .GetRequiredService<UserManager<User>>();
+
+                DataScaffold.Initialize(context, manager);
+
                 builder
                     .UseDeveloperExceptionPage()
                     .UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());

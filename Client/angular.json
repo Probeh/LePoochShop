@@ -55,7 +55,6 @@
               "node_modules/font-awesome/css/font-awesome.css",
               "node_modules/bootstrap/dist/css/bootstrap.css",
               "src/assets/styles/themes.scss",
-              "src/assets/styles/forms.scss",
               "src/assets/styles/styles.scss",
               "node_modules/ngx-toastr/toastr.css"
             ],

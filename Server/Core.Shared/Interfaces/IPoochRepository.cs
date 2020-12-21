@@ -17,9 +17,9 @@ namespace Core.Shared.Interfaces
     public class PoochRepository : IPoochRepository
     {
         // ======================================= //
-        private readonly ApplicationData _context;
+        private readonly ApplicationContext _context;
         // ======================================= //
-        public PoochRepository(ApplicationData context)
+        public PoochRepository(ApplicationContext context)
         {
             this._context = context;
         }

@@ -44,3 +44,9 @@
 .btn-text {
   margin-left: 5px;
 }
+.dropdown-menu {
+  left: -100%;
+}
+.dropdown-item:active {
+  background: $theme;
+}

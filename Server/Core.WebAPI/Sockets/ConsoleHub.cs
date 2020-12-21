@@ -13,11 +13,10 @@ namespace Core.WebAPI.Sockets
         {
             return base.OnConnectedAsync();
         }
-
         public override Task OnDisconnectedAsync(Exception exception)
         {
             return base.OnDisconnectedAsync(exception);
         }
-
+        // ======================================= //
     }
 }

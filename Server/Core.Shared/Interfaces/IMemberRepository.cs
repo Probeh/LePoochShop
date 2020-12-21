@@ -17,9 +17,9 @@ namespace Core.Shared.Interfaces
     public class MemberRepository : IMemberRepository
     {
         // ======================================= //
-        private readonly ApplicationData _context;
+        private readonly ApplicationContext _context;
         // ======================================= //
-        public MemberRepository(ApplicationData context)
+        public MemberRepository(ApplicationContext context)
         {
             this._context = context;
         }

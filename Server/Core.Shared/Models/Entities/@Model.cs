@@ -14,24 +14,23 @@ namespace Core.Shared.Models.Entities
         private bool _isActive;
         // ======================================= //
         public string Title { get; set; }
-        public string Description { get; set; }
+        public string Details { get; set; }
         // ======================================= //
         protected BaseModel()
         {
             this.Created = DateTime.Now;
             this.IsActive = false;
             this.Title = this.GetType().Name;
-            this.Description = $"{this.GetType().Name} Item #{this.GetHashCode()}";
+            this.Details = $"{this.GetType().Name} Item #{this.GetHashCode()}";
         }
-        protected BaseModel(bool isActive, string title, string description) : this()
+        protected BaseModel(bool isActive, string title, string details) : this()
         {
             Title = title;
-            Description = description;
+            Details = details;
             IsActive = isActive;
         }
-        protected BaseModel(int id, DateTime? created, DateTime? activeSince, DateTime? activeLast, bool isActive, string title, string description) : this(isActive, title, description)
+        protected BaseModel(DateTime? created, DateTime? activeSince, DateTime? activeLast, bool isActive, string title, string details) : this(isActive, title, details)
         {
-            Id = id;
             Created = created;
             ActiveSince = activeSince;
             ActiveLast = activeLast;
@@ -64,5 +63,12 @@ namespace Core.Shared.Models.Entities
         }
         // ======================================= //
     }
-    public abstract class BaseModel<TSource> : BaseModel where TSource : BaseModel<TSource> { }
+    public abstract class BaseModel<TSource> : BaseModel where TSource : BaseModel<TSource>
+    {
+        protected BaseModel() { }
+        protected BaseModel(bool isActive, string title, string details, DateTime? created = null) : base(isActive, title, details)
+        {
+            this.Created = created ?? created;
+        }
+    }
 }

@@ -38,7 +38,7 @@ namespace Core.WebAPI.Extensions
                 .AddRoleManager<RoleManager<Role>>()
                 .AddSignInManager<SignInManager<User>>()
                 .AddRoleValidator<RoleValidator<Role>>()
-                .AddEntityFrameworkStores<ApplicationData>().Services;
+                .AddEntityFrameworkStores<ApplicationContext>().Services;
         }
     }
 }

@@ -150,10 +150,7 @@ export class AppComponent { }
                 <p class="comment">
                     <code>./app.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">@import &quot;themes&quot;;
-@import &quot;styles&quot;;
-
-.content {
+                <pre class="line-numbers"><code class="language-scss">.content {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -164,50 +161,6 @@ export class AppComponent { }
   .content-main {
     flex: auto;
     overflow-y: auto;
-  }
-}
-
-.view-port {
-  height: 100vh;
-  max-height: 100vh;
-  width: 100vw;
-  max-width: 100vw;
-  // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; //
-  display: flex;
-  .view-main {
-    flex: auto;
-    display: flex;
-    flex-direction: column;
-    .view-content {
-      flex: auto;
-      overflow-x: hidden;
-      overflow-y: auto;
-    }
-  }
-  .view-panel {
-    min-width: 50px;
-    max-width: 250px;
-    background: $panel-bg;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-
-    .panel-items {
-      width: 50px;
-
-      .panel-item {
-        height: 50px;
-        width: 50px;
-
-        :hover {
-          background: darken($color: $panel-bg, $amount: 10%);
-          * {
-            color: $secondary;
-          }
-        }
-      }
-    }
   }
 }
 </code></pre>
@@ -239,7 +192,7 @@ export class AppComponent { }
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="content">  <div class="content-header shadow">    <app-navigation></app-navigation>  </div>  <div class="content-main">    <router-outlet></router-outlet>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentComponent', 'selector': 'app-appointment'},{'name': 'AppointmentsComponent', 'selector': 'app-appointments'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IdentityComponent', 'selector': 'app-identity'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ScheduleComponent', 'selector': 'app-schedule'}];
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentFormComponent', 'selector': 'app-appointment-form'},{'name': 'AppointmentListComponent', 'selector': 'app-appointment-list'},{'name': 'AppointmentViewComponent', 'selector': 'app-appointment-view'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IdentityComponent', 'selector': 'app-identity'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ScheduleComponent', 'selector': 'app-schedule'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Identity } from '@models/identity.model';
+import { IdentityService } from '@services/identity.service';
 
 @Component({
   selector: 'app-schedule',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./schedule.component.scss']
 })
 export class ScheduleComponent implements OnInit {
-
-  constructor() { }
+  public account: Identity;
+  constructor(private identity: IdentityService) { }
 
   ngOnInit() {
+    this.account = this.identity.identity;
   }
 
+  public getNames() {
+
+  }
 }

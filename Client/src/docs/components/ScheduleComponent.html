@@ -238,10 +238,57 @@ export class ScheduleComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;
-  schedule works!
-&lt;/p&gt;
-</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;wrapper row m-0&quot;&gt;
+  &lt;div class&#x3D;&quot;col-md-3 p-2 bg-light&quot;&gt;
+    &lt;div class&#x3D;&quot;card&quot;&gt;
+      &lt;div class&#x3D;&quot;card-header p-1 bg-warning&quot;&gt;&lt;/div&gt;
+      &lt;div class&#x3D;&quot;card-body&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;col-md-9 p-2 bg-light&quot;&gt;
+    &lt;div class&#x3D;&quot;row m-0&quot;&gt;
+      &lt;div class&#x3D;&quot;col&quot;&gt;
+        &lt;div
+          class&#x3D;&quot;alert alert-info&quot;
+          role&#x3D;&quot;alert&quot;
+        &gt;
+          &lt;strong&gt;info&lt;/strong&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;col&quot;&gt;
+        &lt;div
+          class&#x3D;&quot;alert alert-warning&quot;
+          role&#x3D;&quot;alert&quot;
+        &gt;
+          &lt;strong&gt;info&lt;/strong&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;col&quot;&gt;
+        &lt;div
+          class&#x3D;&quot;alert alert-success&quot;
+          role&#x3D;&quot;alert&quot;
+        &gt;
+          &lt;strong&gt;info&lt;/strong&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;row m-0&quot;&gt;
+      &lt;div class&#x3D;&quot;col-md-8 bg-light&quot;&gt;
+        &lt;div class&#x3D;&quot;card&quot;&gt;
+          &lt;div class&#x3D;&quot;card-header p-1 bg-success&quot;&gt;&lt;/div&gt;
+          &lt;div class&#x3D;&quot;card-body&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;col-md-4 bg-light&quot;&gt;
+        &lt;div class&#x3D;&quot;card&quot;&gt;
+          &lt;div class&#x3D;&quot;card-header p-1 bg-info&quot;&gt;&lt;/div&gt;
+          &lt;div class&#x3D;&quot;card-body&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -276,8 +323,8 @@ export class ScheduleComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>  schedule works!</p></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentComponent', 'selector': 'app-appointment'},{'name': 'AppointmentsComponent', 'selector': 'app-appointments'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IdentityComponent', 'selector': 'app-identity'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ScheduleComponent', 'selector': 'app-schedule'}];
+        var COMPONENT_TEMPLATE = '<div><div class="wrapper row m-0">  <div class="col-md-3 p-2 bg-light">    <div class="card">      <div class="card-header p-1 bg-warning"></div>      <div class="card-body"></div>    </div>  </div>  <div class="col-md-9 p-2 bg-light">    <div class="row m-0">      <div class="col">        <div          class="alert alert-info"          role="alert"        >          <strong>info</strong>        </div>      </div>      <div class="col">        <div          class="alert alert-warning"          role="alert"        >          <strong>info</strong>        </div>      </div>      <div class="col">        <div          class="alert alert-success"          role="alert"        >          <strong>info</strong>        </div>      </div>    </div>    <div class="row m-0">      <div class="col-md-8 bg-light">        <div class="card">          <div class="card-header p-1 bg-success"></div>          <div class="card-body"></div>        </div>      </div>      <div class="col-md-4 bg-light">        <div class="card">          <div class="card-header p-1 bg-info"></div>          <div class="card-body"></div>        </div>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentFormComponent', 'selector': 'app-appointment-form'},{'name': 'AppointmentListComponent', 'selector': 'app-appointment-list'},{'name': 'AppointmentViewComponent', 'selector': 'app-appointment-view'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IdentityComponent', 'selector': 'app-identity'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ScheduleComponent', 'selector': 'app-schedule'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ScheduleComponent'};
 </script>

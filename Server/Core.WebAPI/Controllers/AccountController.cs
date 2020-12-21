@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Core.Shared.Models.DTOs;
 using Core.Shared.Models.Identity;
@@ -6,6 +7,7 @@ using Core.WebAPI.Extensions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -46,7 +48,7 @@ namespace Core.WebAPI.Controllers
                     return BadRequest(register.Errors);
                 return Ok();
             }
-            else return BadRequest(ModelState);
+            else return BadRequest(ModelState as IEnumerable<KeyValuePair<string, ModelStateEntry>>);
         }
 
         [HttpPost]
@@ -64,7 +66,7 @@ namespace Core.WebAPI.Controllers
                     ModelState.AddModelError("Password", "Invalid password");
 
                 if (!ModelState.IsValid)
-                    return Unauthorized(ModelState);
+                    return Unauthorized(ModelState as IEnumerable<KeyValuePair<string, ModelStateEntry>>);
 
                 Response.CreateToken(_config);
                 return Ok(userResult);

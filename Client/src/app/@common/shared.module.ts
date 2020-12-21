@@ -10,19 +10,19 @@ import { AppSettings                               } from '@helpers/app.settings
 import { IdentityModule                            } from '@identity/identity.module'
 import { AboutComponent                            } from '@sections/about/about.component'
 import { HomeComponent                             } from '@sections/home/home.component'
-import { ErrorService                              } from '@services/error.service'
 import { IdentityGuard                             } from '@services/identity.guard'
 import { IdentityService                           } from '@services/identity.service'
 import { LoggerService                             } from '@services/logger.service'
 import { MessageService                            } from '@services/message.service'
 import { RequestInterceptor                        } from '@services/request.interceptor'
+import { ScheduleService                           } from '@services/schedule.service'
 import { StorageService                            } from '@services/storage.service'
 import { TokenInterceptor                          } from '@services/token.interceptor'
 
 // ======================================= //
 const components: any[] = [AboutComponent, HomeComponent          , NavigationComponent                                                                   ];
 const modules   : any[] = [CommonModule  , BrowserAnimationsModule, HttpClientModule   , IdentityModule, ToastrModule.forRoot(), RouterModule.forChild([])];
-const services  : any[] = [MessageService, IdentityService        , IdentityGuard      , ErrorService, LoggerService, StorageService                      ];
+const services  : any[] = [MessageService, ScheduleService        , IdentityService    , IdentityGuard, LoggerService, StorageService                     ];
 // ======================================= //
 @NgModule({
   declarations:  components,
@@ -44,7 +44,7 @@ export class SharedModule {
         { provide: AppSettings, useValue: config },
         services,
         { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true },
-        { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor  , multi: true }
+        { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
       ]
     }
   }

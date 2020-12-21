@@ -17,9 +17,9 @@ namespace Core.Shared.Interfaces
     public class AppointmentRepository : IAppointmentRepository
     {
         // ======================================= //
-        private readonly ApplicationData _context;
+        private readonly ApplicationContext _context;
         // ======================================= //
-        public AppointmentRepository(ApplicationData context) => this._context = context;
+        public AppointmentRepository(ApplicationContext context) => this._context = context;
         // ======================================= //
         public async Task<ICollection<AppointmentModel>> SearchModels()
         {

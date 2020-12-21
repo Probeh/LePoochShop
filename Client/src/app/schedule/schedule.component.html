@@ -1,3 +1,117 @@
-<p>
-  schedule works!
-</p>
+<div class="wrapper row m-0">
+  <div class="col-md-3 p-2 bg-light">
+    <div class="card h-100">
+      <div class="card-header p-1 bg-warning"></div>
+      <div
+        class="card-title m-0"
+        style="display: flex;"
+      >
+        <h1><i class="fa fa-user-circle-o mr-4"></i></h1>
+        <div>
+          <h2 class="mb-1">{{this.account.userName}}</h2>
+          <h6>{{this.account.email}}</h6>
+        </div>
+      </div>
+      <div class="card-body p-2">
+        <div
+          class="alert alert-warning"
+          role="alert"
+        >
+          <strong>warning</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="col-md-9 p-2 bg-light"
+    style="display: flex; flex-direction: column;"
+  >
+    <div class="row m-0">
+      <div class="col">
+        <div
+          class="alert alert-info"
+          role="alert"
+        >
+          <div class="row">
+            <div
+              class="col"
+              style="font-size: 35px; display: flex; flex-direction: column; justify-content: center;"
+            ><i class="fa fa-calendar-check-o"></i></div>
+            <div class="col-10">
+              <strong>Next Appointment</strong>
+              <hr>
+              <h1>10 Total</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div
+          class="alert alert-warning"
+          role="alert"
+        >
+          <div class="row">
+            <div
+              class="col"
+              style="font-size: 35px; display: flex; flex-direction: column; justify-content: center;"
+            ><i class="fa fa-users"></i></div>
+            <div class="col-10">
+              <strong>Total Members</strong>
+              <hr>
+              <h1>10 Total</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div
+          class="alert alert-success"
+          role="alert"
+        >
+          <div class="row">
+            <div
+              class="col"
+              style="font-size: 35px; display: flex; flex-direction: column; justify-content: center;"
+            ><i class="fa fa-tasks"></i></div>
+            <div class="col-10">
+              <strong>Total Appointments</strong>
+              <hr>
+              <h1>10 Total</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="row m-0"
+      style="flex: auto;"
+    >
+      <div class="col-md-8 bg-light">
+        <div class="card h-100">
+          <div class="card-header p-1 bg-success"></div>
+          <div class="card-body">
+            <div
+              class="alert alert-success"
+              role="alert"
+            >
+              <strong>success</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 bg-light">
+        <div class="card h-100">
+          <div class="card-header p-1 bg-info"></div>
+          <div class="card-body">
+            <div
+              class="alert alert-info"
+              role="alert"
+            >
+              <strong>info</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
